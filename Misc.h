@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 
-#ifdef USE_REAL_PATH
 #ifdef UIFUNCTIONS_NOT_C
 extern NSString *UISystemRootDirectory();
 #else
@@ -15,7 +14,6 @@ extern NSString *UISystemRootDirectory();
 #define realPath(path) (path)
 #define realPath2(path) ([path UTF8String])
 #define realPrefPath(domain) [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", domain]
-#endif
 #endif
 
 #define fileExist(path) [[NSFileManager defaultManager] fileExistsAtPath:path]
