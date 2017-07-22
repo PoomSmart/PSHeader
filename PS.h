@@ -1166,12 +1166,14 @@ typedef enum {
     TargetTypeKeyboardExtension
 } TargetType;
 
-static BOOL _isTarget(TargetType type, NSArray *filters) {
+static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
     NSProcessInfo *processInfo = [NSClassFromString(@"NSProcessInfo") processInfo];
     NSArray *args = processInfo.arguments;
-    if (args.count != 0) {
+    HBLogDebug(@"Process arguments: %@", args);
+    if (args.count) {
         NSString *executablePath = [args objectAtIndex:0];
         if (executablePath) {
+            HBLogDebug(@"Executable path: %@", executablePath);
             NSString *processName = [executablePath lastPathComponent];
             BOOL isSpringBoard = [processName isEqualToString:@"SpringBoard"];
             BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
