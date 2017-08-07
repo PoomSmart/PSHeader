@@ -5,6 +5,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/CAFilter.h>
 
+#define FOR_IOS8_UP __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+#define FOR_IOS7_UP __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+
 //#define PS_DONATE_URL @"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=GBQGZL8EFMM86"
 #define PS_DONATE_URL @"https://poomsmart.github.io/repo/"
 #define PS_TWITTER_URL @"https://twitter.com/PoomSmart"
@@ -258,7 +261,9 @@
 @property(retain, nonatomic) UIView *_itemsContainerView;
 @property NSUInteger selectedIndex;
 @property NSInteger orientation;
-+ (BOOL)wantsVerticalModeDialForTraitCollection:(id)traitCollection;
+#if FOR_IOS8_UP
++ (BOOL)wantsVerticalModeDialForTraitCollection:(UITraitCollection *)traitCollection;
+#endif
 + (BOOL)wantsVerticalModeDialForLayoutStyle:(NSInteger)style;
 @end
 
@@ -335,7 +340,9 @@
 @property(retain, nonatomic) CAMModeDial *modeDial;
 @property(retain, nonatomic) CAMSlalomIndicatorView *slalomIndicatorView;
 @property(assign) NSInteger layoutStyle;
-+ (BOOL)wantsVerticalBarForTraitCollection:(id)trait;
+#if FOR_IOS8_UP
++ (BOOL)wantsVerticalBarForTraitCollection:(UITraitCollection *)traitCollection;
+#endif
 + (BOOL)wantsVerticalBarForLayoutStyle:(NSInteger)style;
 - (UIButton *)_expandedMenuButton;
 - (NSObject /*<cameraViewDelegate>*/ *)delegate;
@@ -992,7 +999,9 @@ typedef struct {
 - (CAMBottomBar *)bottomBar;
 - (CAMZoomSlider *)zoomSlider;
 - (CGFloat)_interpolatedTopBarHeight;
-- (CGSize)_topBarSizeForTraitCollection:(id)traitCollection;
+#if FOR_IOS8_UP
+- (CGSize)_topBarSizeForTraitCollection:(UITraitCollection *)traitCollection;
+#endif
 @end
 
 @interface CUShutterButton : CAMShutterButton
@@ -1040,7 +1049,9 @@ typedef struct {
 - (BOOL)_shouldHideModeDialForMode:(NSInteger)mode device:(NSInteger)device;
 - (BOOL)_isCapturingTimelapse;
 - (BOOL)isEmulatingImagePicker;
-- (id)traitCollection;
+#if FOR_IOS8_UP
+- (UITraitCollection *)traitCollection;
+#endif
 - (CAMTopBar *)_topBar;
 - (CAMBottomBar *)_bottomBar;
 - (CAMViewfinderView *)viewfinderView;
@@ -1111,15 +1122,19 @@ typedef struct {
 @end
 #pragma clang diagnostic pop
 
+#if FOR_IOS7_UP
+
 @interface AVCaptureDeviceFormat (Private)
 - (CMVideoDimensions)sensorDimensions;
 @end
 
-@interface AVCaptureStillImageRequest : NSObject
-@property CGSize previewImageSize;
+@interface AVCaptureDeviceFormatInternal : NSObject
 @end
 
-@interface AVCaptureDeviceFormatInternal : NSObject
+#endif
+
+@interface AVCaptureStillImageRequest : NSObject
+@property CGSize previewImageSize;
 @end
 
 @interface DCIMImageWellUtilities : NSObject
