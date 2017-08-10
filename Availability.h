@@ -1,27 +1,75 @@
+#ifndef __NSi_4_0
 #define __NSi_4_0 introduced = 4.0
+#endif
+#ifndef __NSi_4_1
 #define __NSi_4_1 introduced = 4.1
+#endif
+#ifndef __NSi_4_2
 #define __NSi_4_2 introduced = 4.2
+#endif
+#ifndef __NSi_4_3
 #define __NSi_4_3 introduced = 4.3
+#endif
+#ifndef __NSi_5_0
 #define __NSi_5_0 introduced = 5.0
+#endif
+#ifndef __NSi_5_1
 #define __NSi_5_1 introduced = 5.1
+#endif
+#ifndef __NSi_6_0
 #define __NSi_6_0 introduced = 6.0
+#endif
+#ifndef __NSi_6_1
 #define __NSi_6_1 introduced = 6.1
+#endif
+#ifndef __NSi_7_0
 #define __NSi_7_0 introduced = 7.0
+#endif
+#ifndef __NSi_7_1
 #define __NSi_7_1 introduced = 7.1
+#endif
+#ifndef __NSi_8_0
 #define __NSi_8_0 introduced = 8.0
+#endif
+#ifndef __NSi_8_1
 #define __NSi_8_1 introduced = 8.1
+#endif
+#ifndef __NSi_8_2
 #define __NSi_8_2 introduced = 8.2
+#endif
+#ifndef __NSi_8_3
 #define __NSi_8_3 introduced = 8.3
+#endif
+#ifndef __NSi_8_4
 #define __NSi_8_4 introduced = 8.4
+#endif
+#ifndef __NSi_9_0
 #define __NSi_9_0 introduced = 9.0
+#endif
+#ifndef __NSi_9_1
 #define __NSi_9_1 introduced = 9.1
+#endif
+#ifndef __NSi_9_2
 #define __NSi_9_2 introduced = 9.2
+#endif
+#ifndef __NSi_9_3
 #define __NSi_9_3 introduced = 9.3
+#endif
+#ifndef __NSi_10_0
 #define __NSi_10_0 introduced = 10.0
+#endif
+#ifndef __NSi_10_1
 #define __NSi_10_1 introduced = 10.1
+#endif
+#ifndef __NSi_10_2
 #define __NSi_10_2 introduced = 10.2
+#endif
+#ifndef __NSi_10_3
 #define __NSi_10_3 introduced = 10.3
+#endif
+#ifndef __NSi_11_0
 #define __NSi_11_0 introduced = 11.0
+#endif
 
 #define __IPHONE_4_0 40000
 #define __IPHONE_4_1 40100

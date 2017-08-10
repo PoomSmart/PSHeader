@@ -6,7 +6,7 @@
 + (instancetype)shutterButton;
 + (instancetype)smallShutterButton;
 + (instancetype)tinyShutterButton;
-+ (instancetype)tinyShutterButtonWithLayoutStyle:(NSInteger)style NS_AVAILABLE_IOS(10_0);
++ (instancetype)tinyShutterButtonWithLayoutStyle:(NSInteger)style PS_AVAILABLE_IOS(10_0);
 @property(getter = isPulsing) BOOL pulsing;
 @property(getter = isSpinning) BOOL spinning;
 @property NSInteger mode;

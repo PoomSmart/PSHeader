@@ -1,7 +1,9 @@
-#if FROM_IOS(7_0)
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
 
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
+
+@class AVCaptureDeviceFormat;
 
 @interface AVCaptureDeviceFormat (Private)
 - (CMVideoDimensions)sensorDimensions;
