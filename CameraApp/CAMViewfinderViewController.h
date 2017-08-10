@@ -43,7 +43,7 @@
 - (NSInteger)_timerDuration;
 - (NSInteger)_resolvedTimerDuration;
 - (NSInteger)_remainingCaptureTimerTicks;
-- (NSMutableArray <NSNumber *> *)modesForModeDial:(id)arg;
+- (NSMutableArray __OF(NSNumber *) *)modesForModeDial:(id)arg;
 - (void)_stopCapturingVideo;
 - (void)_handleShutterButtonPressed:(id)arg1;
 - (void)_handleShutterButtonReleased:(id)arg1;

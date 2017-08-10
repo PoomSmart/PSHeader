@@ -1,5 +1,6 @@
 #import "_PLManagedAsset.h"
 #import "PFVideoAdjustments.h"
+#import "PHAsset.h"
 #import "PLCIFilterUtilties.h"
 #import "PLEditPhotoController.h"
 #import "PLManagedAsset.h"
@@ -14,3 +15,4 @@
 #import "PUPhotoEditProtoSettings.h"
 #import "PUPhotoEditViewController.h"
 #import "PURootSettings.h"
+#import "PUVideoEditViewController.h"
