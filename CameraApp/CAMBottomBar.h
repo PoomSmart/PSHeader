@@ -1,3 +1,5 @@
+#if FROM_IOS(7_0)
+
 #import "CAMFilterButton.h"
 #import "CAMFlashButton.h"
 #import "CAMFlipButton.h"
@@ -7,6 +9,8 @@
 #import "CAMImageWell.h"
 #import "CAMModeDial.h"
 #import "CAMSlalomIndicatorView.h"
+
+@class UITraitCollection, CAMTimerButton;
 
 @interface CAMBottomBar : UIView
 @property(readonly, assign, nonatomic) UIView *backgroundView;
@@ -35,3 +39,5 @@
 - (BOOL)shouldHideFlashButtonForMode:(NSInteger)mode device:(NSInteger)device;
 - (BOOL)shouldHideFlipButtonForMode:(NSInteger)mode device:(NSInteger)device;
 @end
+
+#endif

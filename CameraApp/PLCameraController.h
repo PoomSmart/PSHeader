@@ -1,7 +1,10 @@
 #if TO_IOS(7_1)
 
 #import "PLCameraView.h"
+#import "PLCameraEffectsRenderer.h"
 #import <AVFoundation/AVFoundation.h>
+
+@class PLCameraEffectsRenderer;
 
 @interface PLCameraController : NSObject
 @property(assign, nonatomic) AVCaptureDevice *currentDevice;
@@ -13,7 +16,7 @@
 @property(assign, nonatomic) NSInteger flashMode;
 @property(readonly, assign, nonatomic) NSInteger cameraOrientation;
 @property(assign, nonatomic, getter = isHDREnabled) BOOL HDREnabled;
-@property(retain) PLCameraEffectsRenderer *effectsRenderer;
+@property(retain, nonatomic) PLCameraEffectsRenderer *effectsRenderer PS_AVAILABLE_IOS(7_0);
 @property(assign, nonatomic) CGFloat videoZoomFactor;
 @property(getter = _isPreviewPaused, setter = _setPreviewPaused :) BOOL _previewPaused;
 @property BOOL performingTimedCapture PS_AVAILABLE_IOS(7_0);
@@ -23,7 +26,7 @@
 - (BOOL)canCaptureVideo;
 - (BOOL)isChangingModes;
 - (BOOL)isReady;
-- (NSMutableArray <NSNumber *> *)supportedCameraModes;
+- (NSMutableArray __OF(NSNumber *) *)supportedCameraModes;
 - (PLCameraView *)delegate;
 - (BOOL)isCapturingVideo;
 - (void)_setFlashMode:(NSInteger)mode force:(BOOL)force;

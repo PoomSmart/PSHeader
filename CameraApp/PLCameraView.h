@@ -14,6 +14,8 @@
 #import "CAMApplicationSpec.h"
 #import "CAMPreviewView.h"
 
+@class CAMModeDial, CAMTopBar, CAMBottomBar, CAMFlashButton, CAMFlipButton, CAMFilterButton, CAMHDRButton, CAMShutterButton, CAMElapsedTimeView, CAMHDRBadge, CAMAvalancheSession, CAMApplicationSpec;
+
 @interface PLCameraView : UIView
 @property(retain, nonatomic) UIToolbar *bottomButtonBar;
 @property NSInteger photoFlashMode;

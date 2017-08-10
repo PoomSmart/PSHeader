@@ -1,3 +1,5 @@
+#if FROM_IOS(9_0)
+
 #import "CAMPreviewView.h"
 
 @interface CAMViewfinderView : UIView
@@ -9,3 +11,5 @@
 - (CGSize)_topBarSizeForTraitCollection:(UITraitCollection *)traitCollection PS_DEPRECATED_IOS(9_0, 9_3);
 - (CGSize)_topBarSizeForLayoutStyle:(NSInteger)layoutStyle PS_AVAILABLE_IOS(10_0);
 @end
+
+#endif

@@ -2,6 +2,8 @@
 
 #import "CAMModeDialItem.h"
 
+@class UITraitCollection;
+
 @interface CAMModeDial : UIView
 @property(retain, nonatomic) NSMutableArray __OF(CAMModeDialItem *) * _items;
 @property(retain, nonatomic) UIView *_itemsContainerView;
