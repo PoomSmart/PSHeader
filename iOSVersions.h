@@ -1,13 +1,14 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import <version.h>
 
-#define IS_IOS_BETWEEN_EEX(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_##start && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_##end)
+#define IS_IOS_BETWEEN_EEX(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_ ## start && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_ ## end)
 
 #define isiOS4 IS_IOS_OR_OLDER(iOS_4_3)
 #define isiOS50 IS_IOS_BETWEEN_EEX(iOS_5_0, iOS_5_1)
 #define isiOS51 IS_IOS_BETWEEN_EEX(iOS_5_1, iOS_6_0)
 #define isiOS5 IS_IOS_BETWEEN_EEX(iOS_5_0, iOS_6_0)
 #define isiOS6 (kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_6_0)
+#define isiOS61 (NSFoundationVersionNumber == NSFoundationVersionNumber_iOS_6_1)
 #define isiOS70 IS_IOS_BETWEEN_EEX(iOS_7_0, iOS_7_1)
 #define isiOS71 IS_IOS_BETWEEN_EEX(iOS_7_1, iOS_8_0)
 #define isiOS7 IS_IOS_BETWEEN_EEX(iOS_7_0, iOS_8_0)
@@ -20,6 +21,7 @@
 #define isiOS4Up (kCFCoreFoundationVersionNumber >= 550.32)
 #define isiOS5Up IS_IOS_OR_NEWER(iOS_5_0)
 #define isiOS6Up IS_IOS_OR_NEWER(iOS_6_0)
+#define isiOS61Up (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_6_1)
 #define isiOS7Up IS_IOS_OR_NEWER(iOS_7_0)
 #define isiOS71Up IS_IOS_OR_NEWER(iOS_7_1)
 #define isiOS8Up IS_IOS_OR_NEWER(iOS_8_0)
