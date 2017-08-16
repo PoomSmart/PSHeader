@@ -38,8 +38,11 @@
 @property(readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession;
 @property(assign, nonatomic) BOOL HDRIsOn;
 @property(readonly, assign, nonatomic) CGRect unzoomedPreviewFrame;
+@property(getter = _isFlipping, setter = _setFlipping:) BOOL _flipping;
+@property(getter = _numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
 - (CAMHDRBadge *)_HDRBadge;
 - (BOOL)HDRIsOn;
+- (BOOL)_performingDelayedCapture;
 - (BOOL)_shouldHideHDRBadgeForMode:(NSInteger)mode;
 - (void)_createHDRBadgeIfNecessary;
 - (void)_updateHDRBadge;
@@ -103,6 +106,7 @@
 - (void)_teardownAvalancheCaptureTimer;
 - (void)_startDelayedCapture;
 - (void)_updateForFocusCapabilities;
+- (void)_collapseExpandedButtonsAnimated:(BOOL)animated;
 @end
 
 #endif

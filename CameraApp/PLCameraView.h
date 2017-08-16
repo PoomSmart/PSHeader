@@ -17,7 +17,7 @@
 @class CAMModeDial, CAMTopBar, CAMBottomBar, CAMFlashButton, CAMFlipButton, CAMFilterButton, CAMHDRButton, CAMShutterButton, CAMElapsedTimeView, CAMHDRBadge, CAMAvalancheSession, CAMApplicationSpec;
 
 @interface PLCameraView : UIView
-@property(retain, nonatomic) UIToolbar *bottomButtonBar;
+@property(retain, nonatomic)UIToolbar *bottomButtonBar;
 @property NSInteger photoFlashMode;
 @property(assign, nonatomic) NSInteger videoFlashMode;
 @property(assign, nonatomic) NSInteger flashMode;
@@ -39,6 +39,8 @@
 @property(readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession PS_AVAILABLE_IOS(7_0);
 @property(assign, nonatomic) BOOL HDRIsOn;
 @property(readonly, assign, nonatomic) CGRect unzoomedPreviewFrame;
+@property(getter = _isFlipping, setter = _setFlipping:) BOOL _flipping;
+@property(getter = _numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
 - (CAMHDRBadge *)_HDRBadge PS_AVAILABLE_IOS(7_0);
 - (BOOL)HDRIsOn;
 - (BOOL)_shouldHideHDRBadgeForMode:(NSInteger)mode;

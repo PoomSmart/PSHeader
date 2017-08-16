@@ -6,7 +6,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface CAMCaptureController : NSObject
-@property(assign, nonatomic) AVCaptureDevice *currentDevice;
+@property(assign, nonatomic)AVCaptureDevice *currentDevice;
 @property(assign, nonatomic) AVCaptureOutput *currentOutput;
 @property(retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property(readonly, assign, nonatomic) AVCaptureSession *currentSession;
@@ -17,11 +17,13 @@
 @property(assign, nonatomic, getter = isHDREnabled) BOOL HDREnabled;
 @property(retain, nonatomic) CAMEffectsRenderer *effectsRenderer;
 @property(assign, nonatomic) CGFloat videoZoomFactor;
-@property(getter = _isPreviewPaused, setter = _setPreviewPaused :) BOOL _previewPaused;
+@property(getter = _isPreviewPaused, setter = _setPreviewPaused:) BOOL _previewPaused;
 @property BOOL performingAvalancheCapture;
 + (BOOL)isStillImageMode:(NSInteger)mode;
 - (BOOL)_isSessionReady;
 - (BOOL)isCameraApp;
+- (BOOL)hasFrontCamera;
+- (BOOL)hasRearCamera;
 - (BOOL)canCaptureVideo;
 - (BOOL)isChangingModes;
 - (BOOL)isReady;
@@ -51,6 +53,7 @@
 - (BOOL)isCapturingTimelapse;
 - (CAMAvalancheCaptureService *)_avalancheCaptureService;
 - (void)setFaceDetectionEnabled:(BOOL)enabled forceDisableImageProcessing:(BOOL)disableIP;
+- (NSUInteger)effectFilterIndexForMode:(NSInteger)mode;
 @end
 
 #endif

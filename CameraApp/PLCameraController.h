@@ -7,7 +7,7 @@
 @class PLCameraEffectsRenderer;
 
 @interface PLCameraController : NSObject
-@property(assign, nonatomic) AVCaptureDevice *currentDevice;
+@property(assign, nonatomic)AVCaptureDevice *currentDevice;
 @property(assign, nonatomic) AVCaptureOutput *currentOutput;
 @property(retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property(readonly, assign, nonatomic) AVCaptureSession *currentSession;
@@ -18,7 +18,7 @@
 @property(assign, nonatomic, getter = isHDREnabled) BOOL HDREnabled;
 @property(retain, nonatomic) PLCameraEffectsRenderer *effectsRenderer PS_AVAILABLE_IOS(7_0);
 @property(assign, nonatomic) CGFloat videoZoomFactor;
-@property(getter = _isPreviewPaused, setter = _setPreviewPaused :) BOOL _previewPaused;
+@property(getter = _isPreviewPaused, setter = _setPreviewPaused:) BOOL _previewPaused;
 @property BOOL performingTimedCapture PS_AVAILABLE_IOS(7_0);
 + (BOOL)isStillImageMode:(NSInteger)mode;
 - (BOOL)_isSessionReady;
@@ -26,6 +26,8 @@
 - (BOOL)canCaptureVideo;
 - (BOOL)isChangingModes;
 - (BOOL)isReady;
+- (BOOL)hasRearCamera;
+- (BOOL)hasFrontCamera;
 - (NSMutableArray __OF(NSNumber *) *)supportedCameraModes;
 - (PLCameraView *)delegate;
 - (BOOL)isCapturingVideo;
@@ -46,6 +48,7 @@
 - (void)setFocusDisabled:(BOOL)disabled;
 - (BOOL)_isVideoMode:(NSInteger)mode;
 - (void)setFaceDetectionEnabled:(BOOL)enabled;
+- (NSUInteger)effectFilterIndexForMode:(NSInteger)mode;
 @end
 
 #endif
