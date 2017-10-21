@@ -89,3 +89,4 @@
 #import "PLReorientingButton.h"
 #import "PLUICameraViewController.h"
 #import "PLVideoPreviewView.h"
+#import "UIView+CameraApp.h"

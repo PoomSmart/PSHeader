@@ -14,9 +14,11 @@
 
 @interface CAMViewfinderViewController : UIViewController
 @property NSInteger _desiredFlashMode;
+@property NSInteger flashMode;
 @property NSInteger _flashMode;
 @property NSInteger _desiredTorchMode;
-@property NSInteger _torchMode;
+@property NSInteger torchMode PS_AVAILABLE_IOS(10_0);;
+@property NSInteger _torchMode PS_DEPRECATED_IOS(9_0, 9_3);;
 @property NSInteger _currentMode;
 @property NSInteger _currentDevice;
 @property NSInteger _desiredCaptureDevice;
@@ -40,6 +42,7 @@
 - (BOOL)_shouldHideTopBarForMode:(NSInteger)mode device:(NSInteger)device PS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)_shouldHideFlashButtonForMode:(NSInteger)mode device:(NSInteger)device PS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)_shouldHideModeDialForMode:(NSInteger)mode device:(NSInteger)device PS_DEPRECATED_IOS(9_0, 9_3);
+- (BOOL)_shouldEnableFlashButton;
 - (BOOL)_isCapturingTimelapse;
 - (BOOL)isEmulatingImagePicker;
 - (CAMPreviewViewController *)_previewViewController;
