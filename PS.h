@@ -36,31 +36,31 @@ static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
             BOOL isSpringBoard = [processName isEqualToString:@"SpringBoard"];
             BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
             BOOL isUILike = isSpringBoard || isExtensionOrApp;
-            #ifdef CHECK_EXCEPTIONS
+#ifdef CHECK_EXCEPTIONS
             if (filters) {
                 if (filters.count == 0)
                     return YES;
                 BOOL allow = NO;
-                #ifdef CHECK_PROCESS_NAME
+    #ifdef CHECK_PROCESS_NAME
                 allow = [filters containsObject:processName];
-                #else
+    #else
                 allow = [filters containsObject:NSBundle.mainBundle.bundleIdentifier];
-                #endif
+    #endif
                 if (allow)
                     return allow;
             }
-            #endif
+#endif
             if (type == TargetTypeGUI)
                 return isUILike;
             BOOL isExtension = [executablePath rangeOfString:@"appex"].location != NSNotFound;
-            #ifdef CHECK_KEYBOARD_EXTENSION
+#ifdef CHECK_KEYBOARD_EXTENSION
             if (type == TargetTypeKeyboardExtension && isExtension) {
                 id val = NSBundle.mainBundle.infoDictionary[@"NSExtension"][@"NSExtensionPointIdentifier"];
                 BOOL isKeyboardExtension = val ? [val isEqualToString:@"com.apple.keyboard-service"] : NO;
                 // Here, TargetTypeKeyboardExtension
                 return isKeyboardExtension;
             }
-            #endif
+#endif
             if (type == TargetTypeGUINoExtension)
                 return isUILike && !isExtension;
             if (type == TargetTypeNonGUI)
