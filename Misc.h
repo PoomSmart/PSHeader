@@ -17,5 +17,5 @@ extern NSString *UISystemRootDirectory();
 #endif
 
 #define fileExist(path) [[NSFileManager defaultManager] fileExistsAtPath:path]
-#define k(akey) (CFStringCompare(key, CFSTR(akey), kCFCompareCaseInsensitive) == kCFCompareEqualTo)
+#define CFStringEqual(s1, s2) (CFStringCompare(s1, s2, kCFCompareCaseInsensitive) == kCFCompareEqualTo)
 #define stringEqual(str1, str2) ([str1 isEqualToString:str2])
