@@ -40,14 +40,12 @@ static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
             if (filters) {
                 if (filters.count == 0)
                     return YES;
-                BOOL allow = NO;
-    #ifdef CHECK_PROCESS_NAME
-                allow = [filters containsObject:processName];
-    #else
-                allow = [filters containsObject:NSBundle.mainBundle.bundleIdentifier];
-    #endif
+                BOOL allow = [filters containsObject:processName];
+                NSString *bundleIdentifier = NSBundle.mainBundle.bundleIdentifier;
+                if (!allow && bundleIdentifier)
+                    allow = [filters containsObject:bundleIdentifier];
                 if (allow)
-                    return allow;
+                    return YES;
             }
 #endif
             if (type == TargetTypeGUI)
