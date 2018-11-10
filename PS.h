@@ -18,12 +18,11 @@
 
 #ifdef CHECK_TARGET
 
-typedef enum {
-    TargetTypeGUI,
-    TargetTypeGUINoExtension,
-    TargetTypeNonGUI,
-    TargetTypeKeyboardExtension
-} TargetType;
+typedef NS_ENUM (NSUInteger, TargetType) {
+    TargetTypeApps = 1 << 0,
+    TargetTypeGenericExtensions = 1 << 1,
+    TargetTypeKeyboardExtensions = 1 << 2
+};
 
 static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
     NSArray <NSString *> *args = [NSClassFromString(@"NSProcessInfo") processInfo].arguments;
@@ -32,10 +31,10 @@ static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
         NSString *executablePath = [args objectAtIndex:0];
         if (executablePath) {
             HBLogDebug(@"Executable path: %@", executablePath);
+            BOOL isExtension = [executablePath rangeOfString:@"appex"].location != NSNotFound;
+            if (type & TargetTypeGenericExtensions && isExtension)
+                return YES;
             NSString *processName = [executablePath lastPathComponent];
-            BOOL isSpringBoard = [processName isEqualToString:@"SpringBoard"];
-            BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
-            BOOL isUILike = isSpringBoard || isExtensionOrApp;
 #ifdef CHECK_EXCEPTIONS
             if (filters) {
                 if (filters.count == 0)
@@ -48,21 +47,16 @@ static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
                     return YES;
             }
 #endif
-            if (type == TargetTypeGUI)
-                return isUILike;
-            BOOL isExtension = [executablePath rangeOfString:@"appex"].location != NSNotFound;
-#ifdef CHECK_KEYBOARD_EXTENSION
-            if (type == TargetTypeKeyboardExtension && isExtension) {
+            BOOL isSpringBoard = [processName isEqualToString:@"SpringBoard"];
+            BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
+            BOOL isUILike = isSpringBoard || isExtensionOrApp;
+            if (type & TargetTypeApps && isUILike && !isExtension)
+                return YES;
+            if (type & TargetTypeKeyboardExtensions && isExtension) {
                 id val = NSBundle.mainBundle.infoDictionary[@"NSExtension"][@"NSExtensionPointIdentifier"];
                 BOOL isKeyboardExtension = val ? [val isEqualToString:@"com.apple.keyboard-service"] : NO;
-                // Here, TargetTypeKeyboardExtension
                 return isKeyboardExtension;
             }
-#endif
-            if (type == TargetTypeGUINoExtension)
-                return isUILike && !isExtension;
-            if (type == TargetTypeNonGUI)
-                return !isUILike && !isExtension;
         }
     }
     return NO;
