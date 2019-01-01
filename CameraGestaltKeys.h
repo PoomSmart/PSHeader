@@ -7,6 +7,7 @@
 
 // ? supports flash on front/rear camera
 #define kBackFlashSupportedKey "camera-flash"
+// deobfuscated: camera-front-flash
 #define kFrontFlashSupportedKey "fJZs6N8SqTS4RuQVh3szxA"
 
 // ? supports video recording
@@ -19,7 +20,9 @@
 #define kFrontHDRSupportedKey "FrontFacingCameraHDRCapability"
 
 // ? supports setting HDR mode as on on front/rear camera
+// deobfuscated: RearFacingCameraHDROnCapability
 #define kBackHDROnSupportedKey "LkWb+FyA1+ef2UD1Fx+kAw"
+// deobfuscated: FrontFacingCameraHDROnCapability
 #define kFrontHDROnSupportedKey "HnHX0gXt8RvhMQzIVMM7hw"
 
 // ? supports auto HDR mode on front/rear camera
@@ -37,9 +40,9 @@
 #define kBackCaptureIntervalKey "gq0j1GmcIcaD4DjJoo9pfg"
 #define kFrontCaptureIntervalKey "TDM8SEI14n2KE9PGHO0a4A"
 
-// ? supports iris mode on rear camera (including the internal used with apple-internal-install)
+// ? supports iris mode on rear camera
+// deobfuscated: SupportsIrisCapture
 #define kIrisSupportedKey "pLzf7OiX5nWAPUMj7BfI4Q"
-#define kIrisInternalSupportedKey "euampscYbKXqj/bSaHD0QA"
 
 // ? supports slo-mo capture on front/rear camera
 #define kBackSlomoSupportedKey "RearFacingCameraHFRCapability"
@@ -49,24 +52,33 @@
 #define kBack60FPSVideoSupportedKey "RearFacingCamera60fpsVideoCaptureCapability"
 
 // maximum 4k FPS supported on front/rear camera
+// deobfuscated: RearFacingCameraVideoCapture4kMaxFPS
 #define kBack4kMaxFPSKey "po7g0ATDzGoVI1DO8ISmuw"
+// deobfuscated: FrontFacingCameraVideoCapture4kMaxFPS
 #define kFront4KMaxFPSKey "cux58RcuSiBhpxWnT3pE4A" // iOS 10+
 
 // maximum 1080p FPS supported on front/rear camera
+// deobfuscated: RearFacingCameraVideoCapture1080pMaxFPS
 #define kBack1080pMaxFPSKey "jBGZJ71pRJrqD8VZ6Tk2VQ" // iOS 10+
+// deobfuscated: FrontFacingCameraVideoCapture1080pMaxFPS
 #define kFront1080pMaxFPSKey "3yzXj0lJhQi+r3kgQlwiOg" // iOS 10+
 
 // maximum 720p FPS supported on front/rear camera
+// deobfuscated: RearFacingCameraVideoCapture720pMaxFPS
 #define kBack720pMaxFPSKey "0/7QNywWU4IqDcyvTv9UYQ"
+// deobfuscated: FrontFacingCameraVideoCapture720pMaxFPS
 #define kFront720pMaxFPSKey "0AFeHRmliNJ4pSlVb8ltZA" // iOS 10+
 
 // maximum slo-mo 720p FPS supported on rear camera
+// deobfuscated: RearFacingCameraHFRVideoCapture720pMaxFPS
 #define kBackSlomo720pMaxFPSKey "XellXEQUbOIgUPoTrIj5nA"
 
 // maximum slo-mo 1080p FPS supported on rear camera
+// deobfuscated: RearFacingCameraHFRVideoCapture1080pMaxFPS
 #define kBackSlomo1080pMaxFPSKey "jKFTzVOYcfTfNBh+yDrprw"
 
 // ? supports HEVC encoding
+// deobfuscated: HEVCEncodingCapability
 #define kHEVCEncodingSupportedKey "g/MkWm2Ac6+TLNBgtBGxsg" // iOS 11+
 
 // maximum video zoom factor on front/rear camera
@@ -74,13 +86,16 @@
 #define kFrontVideoMaximumZoomFactorKey "FrontFacingCameraMaxVideoZoomFactor"
 
 // ? supports telephoto on rear camera
+// deobfuscated: RearFacingTelephotoCameraCapability
 #define kBackTelephotoSupportedKey "YzrS+WPEMqyh/FBv/n/jvA" // iOS 11+
-// ? supports dual on rear camera
-// is used for portrait mode
+// ? supports dual on rear camera, is used for portrait mode
+// deobfuscated: DeviceHasAggregateCamera
 #define kBackDualSupportedKey "0/VAyl58TL5U/mAQEJNRQw" // iOS 11+
 
 // maximum len zoom factor for photo/video on dual rear camera
+// deobfuscated: AggregateDevicePhotoZoomFactor
 #define kBackDualPhotoMaximumZoomFactorKey "JLP/IinyzetEPztvoNUNKg" // iOS 11+
+// deobfuscated: AggregateDeviceVideoZoomFactor
 #define kBackDualVideoMaximumZoomFactorKey "IweaHIDpz+rknAcb3+xg9g" // iOS 11+
 
 // ? has front pearl camera (might require use with MGIsQuestionValid())
@@ -88,19 +103,23 @@
 #define kFrontPearlSupportedKey "8S7ydMJ4DlCUF38/hI/fJA" // iOS 11+
 
 // ? supports portrait effects
+// deobfuscated: DeviceSupportsPortraitLightEffectFilters
 #define kPortraitEffectsSupportedKey "hewg+QX1h57eGJGphdCong" // iOS 11+
 
 // ? supports forcing shutter sound on
 #define kShutterSoundRequiredKey "RegionalBehaviorShutterClick"
 
 // ? supports using lock button as shutter button
+// deobfuscated: IsPwrOpposedVol
 #define kLockButtonAppropriateForShutterKey "euampscYbKXqj/bSaHD0QA" // iOS 11+
 
 // ? supports pipelined still image processing
+// deobfuscated: PipelinedStillImageProcessingCapability
 #define kPipelinedStillImageProcessingSupportedKey "XIcF5FOyQlt/H79oFw9ciA" // iOS 11+
 
-// ? supports modern HDR mode†
+// ? supports modern HDR mode
 // suspected to be the key to check if the device is introduced as of 2017
+// deobfuscated: CameraHDR2Capability
 #define kModernHDRSupportedKey "cWWKdUn+rIclZ60ZGAVhBw" // iOS 12+
 
 // ? supports auto low light video capture
