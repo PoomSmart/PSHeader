@@ -8,6 +8,7 @@
 - (UILabel *)_topLabel;
 - (UILabel *)_bottomLabel;
 - (UIImageView *)_borderImageView;
+- (void)_updateForAppearanceChange;
 @end
 
 #endif

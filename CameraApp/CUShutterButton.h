@@ -11,6 +11,7 @@
 @property(getter = isSpinning) BOOL spinning;
 @property NSInteger mode;
 - (UIColor *)_colorForMode:(NSInteger)mode;
+- (UIColor *)_innerCircleColorForMode:(NSInteger)mode spinning:(BOOL)spinning;
 - (UIView *)_innerView;
 - (UIView *)_outerView;
 - (void)_updateOuterAndInnerLayers;

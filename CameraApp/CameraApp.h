@@ -1,3 +1,4 @@
+#import "AVCaptureDeviceFormat+CameraUI.h"
 #import "AVCaptureSession+CAMCaptureEngine.h"
 #import "CAMApplicationSpec.h"
 #import "CAMApplicationViewController.h"
@@ -53,6 +54,7 @@
 #import "CAMTorchPattern.h"
 #import "CAMTorchPatternController.h"
 #import "CAMTriStateButton.h"
+#import "CAMUserPreferences.h"
 #import "CAMVideoPreviewView.h"
 #import "CAMViewfinderView.h"
 #import "CAMViewfinderViewController.h"

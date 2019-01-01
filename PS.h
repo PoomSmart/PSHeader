@@ -12,6 +12,7 @@
 #import "Celestial/Celestial.h"
 #import "PhotoLibrary/PhotoLibrary.h"
 #import "CameraApp/CameraApp.h"
+#import "CameraGestaltKeys.h"
 
 #define PS_DONATE_URL @"https://poomsmart.github.io/repo/"
 #define PS_TWITTER_URL @"https://twitter.com/PoomSmart"

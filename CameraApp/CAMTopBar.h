@@ -33,6 +33,7 @@
 - (BOOL)shouldHideFlipButtonForMode:(NSInteger)mode device:(NSInteger)device PS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)shouldHideFlashButtonForMode:(NSInteger)mode device:(NSInteger)device PS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)shouldHideFlashButtonForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration PS_AVAILABLE_IOS(10_0);
+- (BOOL)shouldHideFramerateIndicatorForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration PS_AVAILABLE_IOS(10_0);
 - (void)setBackgroundStyle:(NSInteger)style animated:(BOOL)animated;
 - (void)setStyle:(NSInteger)style animated:(BOOL)animated;
 - (void)expandMenuButton:(UIButton *)button animated:(BOOL)animated;

@@ -64,6 +64,8 @@
 - (void)captureController:(id)arg1 didChangeToMode:(NSInteger)mode device:(NSInteger)device PS_DEPRECATED_IOS(9_0, 9_3);
 - (void)_flashButtonDidChangeFlashMode:(CAMFlashButton *)flashButton;
 - (void)_setCurrentMode:(NSInteger)mode PS_DEPRECATED_IOS(9_0, 9_3);
+- (void)_writeUserPreferences;
+- (void)_readUserPreferencesAndHandleChanges;
 @end
 
 #endif
