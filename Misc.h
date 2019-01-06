@@ -1,13 +1,8 @@
 #import <Foundation/Foundation.h>
 
-#ifdef UIFUNCTIONS_NOT_C
-extern NSString *UISystemRootDirectory();
-#else
-#import <UIKit/UIFunctions.h>
-#endif
-
 #if TARGET_OS_SIMULATOR
-#define realPath(path) [UISystemRootDirectory() stringByAppendingPathComponent: path]
+#import <UIKit/UIFunctions.h>
+#define realPath(path) [UISystemRootDirectory() stringByAppendingPathComponent:path]
 #define realPath2(path) [realPath(path) UTF8String]
 #define realPrefPath(domain) [NSString stringWithFormat:@"%@/Library/Preferences/%@.plist", @(getenv("SIMULATOR_SHARED_RESOURCES_DIRECTORY")), domain]
 #else
