@@ -131,5 +131,9 @@
 // ? supports studio light portrait preview
 #define kStudioLightPortraitPreviewKey "DeviceSupportsStudioLightPortraitPreview" // iOS 12+
 
+// ? supports single camera portrait mode
+#define kSSingleCameraPortraitKey "FymLPtOEy6FdE7TmKeoTdg" // iOS 12+
+// deobfuscated: DeviceSupportsSingleCameraPortrait
+
 // ? supports capturing on finger touch down
 #define kCameraCaptureOnTouchDownSupportedKey "DeviceSupportsCameraCaptureOnTouchDown" // iOS 12+
