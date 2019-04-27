@@ -45,6 +45,7 @@
 #define isiOS10_3Up IS_IOS_OR_NEWER(iOS_10_3)
 #define isiOS11Up IS_IOS_OR_NEWER(iOS_11_0)
 #define isiOS12Up IS_IOS_OR_NEWER(iOS_12_0)
+#define isiOS12_1Up IS_IOS_OR_NEWER(iOS_12_1)
 
 #define isiOS45 (isiOS4Up && kCFCoreFoundationVersionNumber < 793.00)
 #define isiOS56 IS_IOS_BETWEEN_EEX(iOS_5_0, iOS_7_0)

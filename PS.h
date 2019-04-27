@@ -6,6 +6,7 @@
 #import "Generics.h"
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
+#import <UIKit/UIFunctions.h>
 
 #import "CoreImage/CoreImage.h"
 #import "AVFoundation/AVFoundation.h"
