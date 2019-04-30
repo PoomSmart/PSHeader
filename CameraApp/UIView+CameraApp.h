@@ -2,6 +2,7 @@
 
 @interface UIView (CameraUI)
 - (void)cam_setHidden:(BOOL)hidden animated:(BOOL)animated;
+- (void)cam_ensureSubview:(UIView *)view;
 @end
 
 #endif

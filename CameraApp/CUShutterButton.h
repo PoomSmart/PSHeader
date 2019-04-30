@@ -5,6 +5,7 @@
 @interface CUShutterButton : UIButton
 + (instancetype)shutterButton;
 + (instancetype)smallShutterButton;
++ (instancetype)smallShutterButtonWithLayoutStyle:(NSInteger)style PS_AVAILABLE_IOS(10_0);
 + (instancetype)tinyShutterButton;
 + (instancetype)tinyShutterButtonWithLayoutStyle:(NSInteger)style PS_AVAILABLE_IOS(10_0);
 @property(getter = isPulsing) BOOL pulsing;
