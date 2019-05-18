@@ -4,8 +4,6 @@
 #import "Availability.h"
 
 #import "Generics.h"
-#import <AVFoundation/AVFoundation.h>
-#import <UIKit/UIKit.h>
 #import <UIKit/UIFunctions.h>
 
 #import "CoreImage/CoreImage.h"
@@ -65,6 +63,22 @@ static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
 }
 
 #define isTarget(type) _isTarget(type, nil)
+
+#ifdef CHECK_TARGET_GUI
+
+static void *observer = NULL;
+static void lateLoad(void);
+
+static void appLoaded(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
+    HBLogDebug(@"Late loading called");
+    lateLoad();
+}
+
+static void appLoadedCallback() {
+    CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(), &observer, appLoaded, (CFStringRef)UIApplicationDidFinishLaunchingNotification, NULL, CFNotificationSuspensionBehaviorCoalesce);
+}
+
+#endif
 
 #endif
 
