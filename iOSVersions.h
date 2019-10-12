@@ -2,11 +2,15 @@
 #import <version.h>
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_12_0
-#define kCFCoreFoundationVersionNumber_iOS_12_0 1500.00 // guess
+#define kCFCoreFoundationVersionNumber_iOS_12_0 1556.00
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber_iOS_12_1
 #define kCFCoreFoundationVersionNumber_iOS_12_1 1560.00
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_12_2
+#define kCFCoreFoundationVersionNumber_iOS_12_2 1570.15
 #endif
 
 #define IS_IOS_BETWEEN_EEX(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_ ## start && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_ ## end)
@@ -46,6 +50,7 @@
 #define isiOS11Up IS_IOS_OR_NEWER(iOS_11_0)
 #define isiOS12Up IS_IOS_OR_NEWER(iOS_12_0)
 #define isiOS12_1Up IS_IOS_OR_NEWER(iOS_12_1)
+#define isiOS12_2Up IS_IOS_OR_NEWER(iOS_12_2)
 
 #define isiOS45 (isiOS4Up && kCFCoreFoundationVersionNumber < 793.00)
 #define isiOS56 IS_IOS_BETWEEN_EEX(iOS_5_0, iOS_7_0)
