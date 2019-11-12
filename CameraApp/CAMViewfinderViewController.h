@@ -65,7 +65,8 @@
 - (void)_flashButtonDidChangeFlashMode:(CAMFlashButton *)flashButton;
 - (void)_setCurrentMode:(NSInteger)mode PS_DEPRECATED_IOS(9_0, 9_3);
 - (void)_writeUserPreferences;
-- (void)_readUserPreferencesAndHandleChanges;
+- (void)_readUserPreferencesAndHandleChanges PS_DEPRECATED_IOS(9_0, 12_4);
+- (void)readUserPreferencesAndHandleChangesWithOverrides:(id)arg1 PS_AVAILABLE_IOS(13_0);
 @end
 
 #endif

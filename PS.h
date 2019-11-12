@@ -1,3 +1,4 @@
+#import "MockMac.h"
 #import "iOSVersions.h"
 #import "CameraMacros.h"
 #import "Misc.h"

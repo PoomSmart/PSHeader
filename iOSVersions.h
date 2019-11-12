@@ -13,6 +13,10 @@
 #define kCFCoreFoundationVersionNumber_iOS_12_2 1570.15
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_13_2
+#define kCFCoreFoundationVersionNumber_iOS_13_2 1673.00
+#endif
+
 #define IS_IOS_BETWEEN_EEX(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_ ## start && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_ ## end)
 
 #define isiOS4 IS_IOS_OR_OLDER(iOS_4_3)
@@ -51,6 +55,7 @@
 #define isiOS12Up IS_IOS_OR_NEWER(iOS_12_0)
 #define isiOS12_1Up IS_IOS_OR_NEWER(iOS_12_1)
 #define isiOS12_2Up IS_IOS_OR_NEWER(iOS_12_2)
+#define isiOS13_2Up IS_IOS_OR_NEWER(iOS_13_2)
 
 #define isiOS45 (isiOS4Up && kCFCoreFoundationVersionNumber < 793.00)
 #define isiOS56 IS_IOS_BETWEEN_EEX(iOS_5_0, iOS_7_0)
