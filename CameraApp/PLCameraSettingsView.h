@@ -1,6 +1,3 @@
-#if TO_IOS(6_1)
-
+NS_CLASS_DEPRECATED_IOS(5_0, 6_1)
 @interface PLCameraSettingsView : UIView
 @end
-
-#endif

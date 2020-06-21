@@ -1,18 +1,20 @@
-#if FROM_IOS(8_0)
-
+NS_CLASS_AVAILABLE_IOS(8_0)
 @interface FigCaptureStillImageSettings : NSObject
-@property NSUInteger outputWidth;
-@property NSUInteger outputHeight;
-@property NSUInteger thumbnailWidth;
-@property NSUInteger thumbnailHeight;
+
 @property BOOL outputMirroring;
-@property NSInteger outputOrientation;
 @property BOOL thumbnailEnabled;
 @property BOOL thumbnailMirroring;
-@property NSInteger thumbnailOrientation;
+
+@property CGFloat scaleFactor;
+
 @property NSInteger flashMode;
 @property NSInteger HDRMode;
-@property CGFloat scaleFactor;
-@end
+@property NSInteger outputOrientation;
+@property NSInteger thumbnailOrientation;
 
-#endif
+@property NSUInteger outputHeight;
+@property NSUInteger outputWidth;
+@property NSUInteger thumbnailHeight;
+@property NSUInteger thumbnailWidth;
+
+@end

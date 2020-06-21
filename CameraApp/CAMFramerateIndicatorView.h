@@ -1,14 +1,18 @@
-#if FROM_IOS(9_0)
+#import <UIKit/UIView.h>
 
+NS_CLASS_AVAILABLE_IOS(9_0)
 @interface CAMFramerateIndicatorView : UIView
+
 @property NSInteger style;
 - (NSInteger)_framesPerSecond;
-- (NSString *)_labelText;
-- (void)_updateLabels;
-- (UILabel *)_topLabel;
-- (UILabel *)_bottomLabel;
-- (UIImageView *)_borderImageView;
-- (void)_updateForAppearanceChange;
-@end
 
-#endif
+- (NSString *)_labelText;
+- (UIImageView *)_borderImageView;
+
+- (UILabel *)_bottomLabel;
+- (UILabel *)_topLabel;
+
+- (void)_updateForAppearanceChange;
+- (void)_updateLabels;
+
+@end

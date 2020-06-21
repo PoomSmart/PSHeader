@@ -1,7 +1,6 @@
-#if FROM_IOS(7_0)
-
+NS_CLASS_AVAILABLE_IOS(7_0)
 @interface AVCaptureDeviceFormat_FigRecorder : NSObject
-- (id)initWithDictionary:(NSDictionary *)dictionary;
-@end
 
-#endif
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
+@end

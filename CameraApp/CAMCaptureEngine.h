@@ -1,14 +1,15 @@
-#if FROM_IOS(9_0)
-
 #import "CAMCaptureMovieFileOutput.h"
 #import <AVFoundation/AVFoundation.h>
 
+NS_CLASS_AVAILABLE_IOS(9_0)
 @interface CAMCaptureEngine : NSObject
-- (CAMCaptureMovieFileOutput *)movieFileOutput;
+
 @property(retain, nonatomic) AVCaptureDevice *cameraDevice;
 @property(retain, nonatomic) AVCaptureSession *_captureSession;
-- (AVCaptureDeviceInput *)audioCaptureDeviceInput;
-- (void)_handleSessionDidStartRunning:(id)arg1;
-@end
 
-#endif
+- (CAMCaptureMovieFileOutput *)movieFileOutput;
+- (AVCaptureDeviceInput *)audioCaptureDeviceInput;
+
+- (void)_handleSessionDidStartRunning:(id)arg1;
+
+@end

@@ -1,9 +1,10 @@
-#if FROM_IOS(10_0)
-
 #import "CAMCaptureConfiguration.h"
 
+NS_CLASS_AVAILABLE_IOS(10_0)
 @interface CAMCaptureGraphConfiguration : NSObject <NSCoding>
+
 + (instancetype)captureGraphConfigurationUsingConfiguration:(CAMCaptureConfiguration *)configuration;
+
 - (NSInteger)flashMode;
 - (NSInteger)torchMode;
 - (NSInteger)HDRMode;
@@ -13,6 +14,5 @@
 - (NSInteger)squareModeEffectFilterType;
 - (NSInteger)mode;
 - (NSInteger)device;
-@end
 
-#endif
+@end

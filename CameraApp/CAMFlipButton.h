@@ -1,7 +1,6 @@
-#if FROM_IOS(7_0)
-
+NS_CLASS_AVAILABLE_IOS(7_0)
 @interface CAMFlipButton : UIButton
-- (UIImage *)_flipImage;
-@end
 
-#endif
+- (UIImage *)_flipImage;
+
+@end

@@ -4,7 +4,6 @@
 #import "Misc.h"
 #import "Availability.h"
 
-#import "Generics.h"
 #import <UIKit/UIFunctions.h>
 
 #import "CoreImage/CoreImage.h"

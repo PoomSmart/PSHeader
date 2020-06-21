@@ -1,12 +1,10 @@
-#if TO_IOS(7_1)
-
 #import "PLCameraView.h"
 #import "PLCameraEffectsRenderer.h"
 #import <AVFoundation/AVFoundation.h>
 
-@class PLCameraEffectsRenderer;
-
+NS_CLASS_DEPRECATED_IOS(5_0, 7_1)
 @interface PLCameraController : NSObject
+
 @property(assign, nonatomic)AVCaptureDevice *currentDevice;
 @property(assign, nonatomic) AVCaptureOutput *currentOutput;
 @property(retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
@@ -16,39 +14,43 @@
 @property(assign, nonatomic) NSInteger flashMode;
 @property(readonly, assign, nonatomic) NSInteger cameraOrientation;
 @property(assign, nonatomic, getter = isHDREnabled) BOOL HDREnabled;
-@property(retain, nonatomic) PLCameraEffectsRenderer *effectsRenderer PS_AVAILABLE_IOS(7_0);
+@property(retain, nonatomic) PLCameraEffectsRenderer *effectsRenderer NS_AVAILABLE_IOS(7_0);
 @property(assign, nonatomic) CGFloat videoZoomFactor;
 @property(getter = _isPreviewPaused, setter = _setPreviewPaused:) BOOL _previewPaused;
-@property BOOL performingTimedCapture PS_AVAILABLE_IOS(7_0);
+@property BOOL performingTimedCapture NS_AVAILABLE_IOS(7_0);
+
 + (BOOL)isStillImageMode:(NSInteger)mode;
+
 - (BOOL)_isSessionReady;
-- (BOOL)isCameraApp;
+- (BOOL)_isVideoMode:(NSInteger)mode;
+- (BOOL)_lockCurrentDeviceForConfiguration;
+
 - (BOOL)canCaptureVideo;
-- (BOOL)isChangingModes;
-- (BOOL)isReady;
-- (BOOL)hasRearCamera;
+- (BOOL)flashWillFire;
 - (BOOL)hasFrontCamera;
-- (NSMutableArray __OF(NSNumber *) *)supportedCameraModes;
-- (PLCameraView *)delegate;
+- (BOOL)hasRearCamera;
+- (BOOL)isCameraApp;
 - (BOOL)isCapturingVideo;
+- (BOOL)isChangingModes;
+- (BOOL)isFocusLockSupported;
+- (BOOL)isReady;
+
+- (CGFloat)maximumZoomFactorForDevice:(AVCaptureDevice *)device;
+- (double)mogulFrameRate;
+
+- (NSMutableArray<NSNumber *> *)supportedCameraModes;
+- (PLCameraView *)delegate;
+
+- (NSUInteger)_activeFilterIndex;
+- (NSUInteger)effectFilterIndexForMode:(NSInteger)mode;
+
+- (void)_lockFocus:(BOOL)focus lockExposure:(BOOL)exposure lockWhiteBalance:(BOOL)whiteBalance;
 - (void)_setFlashMode:(NSInteger)mode force:(BOOL)force;
 - (void)_suggestedHDRChanged;
-- (BOOL)isFocusLockSupported;
-- (BOOL)flashWillFire;
+- (void)_unlockCurrentDeviceForConfiguration;
+
 - (void)pausePreview;
 - (void)resumePreview;
 - (void)setFaceDetectionEnabled:(BOOL)enabled;
 - (void)setFocusDisabled:(BOOL)disabled;
-- (void)_lockFocus:(BOOL)focus lockExposure:(BOOL)exposure lockWhiteBalance:(BOOL)whiteBalance;
-- (NSUInteger)_activeFilterIndex;
-- (double)mogulFrameRate;
-- (CGFloat)maximumZoomFactorForDevice:(AVCaptureDevice *)device;
-- (BOOL)_lockCurrentDeviceForConfiguration;
-- (void)_unlockCurrentDeviceForConfiguration;
-- (void)setFocusDisabled:(BOOL)disabled;
-- (BOOL)_isVideoMode:(NSInteger)mode;
-- (void)setFaceDetectionEnabled:(BOOL)enabled;
-- (NSUInteger)effectFilterIndexForMode:(NSInteger)mode;
 @end
-
-#endif

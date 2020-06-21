@@ -1,5 +1,4 @@
-#if FROM_IOS(7_0)
-
+NS_CLASS_AVAILABLE_IOS(7_0)
 #import "CAMButtonLabel.h"
 
 @interface CAMHDRButton : UIButton <NSCoding>
@@ -18,5 +17,3 @@
 - (void)_layoutForPortraitOrientation;
 - (void)_commonCAMHDRButtonInitialization;
 @end
-
-#endif

@@ -1,26 +1,28 @@
-#if FROM_IOS(8_0)
-
+NS_CLASS_AVAILABLE_IOS(8_0)
 @interface CAMZoomSlider : UISlider
+
 @property(getter = isMinimumAutozooming) BOOL minimumAutozooming;
 @property(getter = isMaximumAutozooming) BOOL maximumAutozooming;
-@property(readonly) NSTimer *_visibilityTimer;
 @property(getter = _isAutozooming, setter = _setAutozooming :) BOOL _autozooming;
+@property(readonly) NSTimer *_visibilityTimer;
 @property(readonly) UIImageView *_thumbImageView;
 @property(readonly) UIView *_minTrackMaskView;
 @property(readonly) UIView *_maxTrackMaskView;
 @property(assign, nonatomic) UIView *delegate;
-- (void)_commonCAMZoomSliderInitialization;
-- (void)stopVisibilityTimer;
-- (void)startVisibilityTimer;
-- (void)_endAutozooming;
+
+- (BOOL)visibilityTimerIsValid;
+
 - (void)_beginAutozooming;
-- (void)_updateAutozooming;
+- (void)_commonCAMZoomSliderInitialization;
+- (void)_endAutozooming;
 - (void)_hideZoomSlider:(id)arg1;
 - (void)_postHideZoomSliderAnimation;
-- (BOOL)visibilityTimerIsValid;
+- (void)_updateAutozooming;
+
 - (void)makeInvisible;
 - (void)makeVisible;
 - (void)makeVisibleAnimated:(BOOL)animated;
-@end
+- (void)startVisibilityTimer;
+- (void)stopVisibilityTimer;
 
-#endif
+@end

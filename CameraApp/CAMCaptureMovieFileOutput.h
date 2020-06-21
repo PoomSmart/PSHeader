@@ -1,8 +1,5 @@
-#if FROM_IOS(9_0)
-
 #import <AVFoundation/AVFoundation.h>
 
+API_AVAILABLE(ios(9.0))
 @interface CAMCaptureMovieFileOutput : AVCaptureMovieFileOutput
 @end
-
-#endif
