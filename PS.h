@@ -24,7 +24,7 @@ typedef NS_ENUM (NSUInteger, TargetType) {
     TargetTypeKeyboardExtensions = 1 << 2
 };
 
-static BOOL _isTarget(TargetType type, NSArray <NSString *> *filters) {
+static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *filters) {
     NSArray <NSString *> *args = [NSClassFromString(@"NSProcessInfo") processInfo].arguments;
     HBLogDebug(@"Process arguments: %@", args);
     if (args.count) {
