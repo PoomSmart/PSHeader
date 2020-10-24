@@ -1,3 +1,6 @@
+#ifndef _PS_MISC
+#define _PS_MISC
+
 #import <Foundation/Foundation.h>
 #import "PAC.h"
 
@@ -17,3 +20,5 @@
 
 #define _PSFindSymbolCallable(image, name) make_sym_callable(MSFindSymbol(image, name))
 #define _PSFindSymbolReadable(image, name) make_sym_readable(MSFindSymbol(image, name))
+
+#endif

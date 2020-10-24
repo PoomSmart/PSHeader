@@ -8,8 +8,6 @@
 #import "CAMModeDial.h"
 #import "CAMSlalomIndicatorView.h"
 
-#import <UIKit/UITraitCollection.h>
-
 NS_CLASS_AVAILABLE_IOS(7_0)
 @interface CAMBottomBar : UIView
 @property(readonly, assign, nonatomic) UIView *backgroundView;

@@ -1,3 +1,6 @@
+#ifndef _PS_CAMGESTALT
+#define _PS_CAMGESTALT
+
 // All capability keys with "?" as a commet prefix requires use with MGGetBoolAnswer(key)
 // Otherwise, use MGGetSInt32Answer(key, defaultValue)
 
@@ -137,3 +140,5 @@
 
 // ? supports capturing on finger touch down
 #define kCameraCaptureOnTouchDownSupportedKey "DeviceSupportsCameraCaptureOnTouchDown" // iOS 12+
+
+#endif

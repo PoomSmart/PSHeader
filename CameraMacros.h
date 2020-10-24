@@ -1,3 +1,6 @@
+#ifndef _PS_CAMMACRO
+#define _PS_CAMMACRO
+
 #import <dlfcn.h>
 #import "Misc.h"
 
@@ -10,3 +13,5 @@
 #define openCamera7() dlopen(realPath2(@PHOTOLIBRARY), RTLD_LAZY)
 #define openCamera6() openCamera7()
 #define openCamera5() openCamera7()
+
+#endif

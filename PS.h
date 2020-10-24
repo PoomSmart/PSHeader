@@ -1,3 +1,6 @@
+#ifndef _PS
+#define _PS
+
 #import "MockMac.h"
 #import "iOSVersions.h"
 #import "CameraMacros.h"
@@ -95,5 +98,7 @@ void killProcess(const char *name) {
     posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char *const *)args, NULL);
     waitpid(pid, &status, WEXITED);
 }
+
+#endif
 
 #endif
