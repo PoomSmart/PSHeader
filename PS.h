@@ -21,6 +21,8 @@
 
 #ifdef CHECK_TARGET
 
+#import <HBLog.h>
+
 typedef NS_ENUM (NSUInteger, TargetType) {
     TargetTypeApps = 1 << 0,
     TargetTypeGenericExtensions = 1 << 1,
@@ -73,7 +75,6 @@ static void *observer = NULL;
 static void lateLoad(void);
 
 static void appLoaded(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    HBLogDebug(@"Late loading called");
     lateLoad();
 }
 
