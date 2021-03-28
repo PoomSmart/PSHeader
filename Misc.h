@@ -5,6 +5,9 @@
 #import "PAC.h"
 
 #if TARGET_OS_SIMULATOR
+
+#import <UIKit/UIFunctions.h>
+
 #define realPath(path) [UISystemRootDirectory() stringByAppendingPathComponent:path]
 #define realPath2(path) [realPath(path) UTF8String]
 #define realPrefPath(domain) [NSString stringWithFormat:@"%@/Library/Preferences/%@.plist", @(getenv("SIMULATOR_SHARED_RESOURCES_DIRECTORY")), domain]
