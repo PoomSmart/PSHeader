@@ -1,27 +1,18 @@
 #ifndef _PS
 #define _PS
 
-#import "MockMac.h"
 #import "iOSVersions.h"
-#import "CameraMacros.h"
 #import "Misc.h"
 #import "Availability.h"
-
-#import <UIKit/UIFunctions.h>
-
-#import "CoreImage/CoreImage.h"
-#import "AVFoundation/AVFoundation.h"
-#import "Celestial/Celestial.h"
-#import "PhotoLibrary/PhotoLibrary.h"
-#import "CameraApp/CameraApp.h"
-#import "CameraGestaltKeys.h"
 
 #define PS_DONATE_URL @"https://poomsmart.github.io/repo/"
 #define PS_TWITTER_URL @"https://twitter.com/PoomSmart"
 
-#ifdef CHECK_TARGET
-
+#ifdef __DEBUG__
 #import <HBLog.h>
+#endif
+
+#ifdef CHECK_TARGET
 
 typedef NS_ENUM (NSUInteger, TargetType) {
     TargetTypeApps = 1 << 0,
@@ -29,39 +20,40 @@ typedef NS_ENUM (NSUInteger, TargetType) {
     TargetTypeKeyboardExtensions = 1 << 2
 };
 
+extern char ***_NSGetArgv();
+
 static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *filters) {
-    NSArray <NSString *> *args = [NSClassFromString(@"NSProcessInfo") processInfo].arguments;
-    HBLogDebug(@"Process arguments: %@", args);
-    if (args.count) {
-        NSString *executablePath = [args objectAtIndex:0];
-        if (executablePath) {
-            HBLogDebug(@"Executable path: %@", executablePath);
-            BOOL isExtension = [executablePath rangeOfString:@"appex"].location != NSNotFound;
-            if (type & TargetTypeGenericExtensions && isExtension)
-                return YES;
-            NSString *processName = [executablePath lastPathComponent];
-#ifdef CHECK_EXCEPTIONS
-            if (filters) {
-                if (filters.count == 0)
-                    return YES;
-                BOOL allow = [filters containsObject:processName];
-                NSString *bundleIdentifier = NSBundle.mainBundle.bundleIdentifier;
-                if (!allow && bundleIdentifier)
-                    allow = [filters containsObject:bundleIdentifier];
-                if (allow)
-                    return YES;
-            }
+    char* executablePathC = **_NSGetArgv();
+	NSString *executablePath = [NSString stringWithUTF8String:executablePathC];
+    if (executablePath) {
+#ifdef __DEBUG__
+        HBLogDebug(@"Executable path: %@", executablePath);
 #endif
-            BOOL isSpringBoard = [processName isEqualToString:@"SpringBoard"];
-            BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
-            BOOL isUILike = isSpringBoard || isExtensionOrApp;
-            if (type & TargetTypeApps && isUILike && !isExtension)
+        BOOL isExtension = [executablePath rangeOfString:@"appex"].location != NSNotFound;
+        if (type & TargetTypeGenericExtensions && isExtension)
+            return YES;
+        NSString *processName = [executablePath lastPathComponent];
+#ifdef CHECK_EXCEPTIONS
+        if (filters) {
+            if (filters.count == 0)
                 return YES;
-            if (type & TargetTypeKeyboardExtensions && isExtension) {
-                id val = NSBundle.mainBundle.infoDictionary[@"NSExtension"][@"NSExtensionPointIdentifier"];
-                BOOL isKeyboardExtension = val ? [val isEqualToString:@"com.apple.keyboard-service"] : NO;
-                return isKeyboardExtension;
-            }
+            BOOL allow = [filters containsObject:processName];
+            NSString *bundleIdentifier = NSBundle.mainBundle.bundleIdentifier;
+            if (!allow && bundleIdentifier)
+                allow = [filters containsObject:bundleIdentifier];
+            if (allow)
+                return YES;
+        }
+#endif
+        BOOL isSpringBoard = [processName isEqualToString:@"SpringBoard"];
+        BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
+        BOOL isUILike = isSpringBoard || isExtensionOrApp;
+        if (type & TargetTypeApps && isUILike && !isExtension)
+            return YES;
+        if (type & TargetTypeKeyboardExtensions && isExtension) {
+            id val = NSBundle.mainBundle.infoDictionary[@"NSExtension"][@"NSExtensionPointIdentifier"];
+            BOOL isKeyboardExtension = val ? [val isEqualToString:@"com.apple.keyboard-service"] : NO;
+            return isKeyboardExtension;
         }
     }
     return NO;
