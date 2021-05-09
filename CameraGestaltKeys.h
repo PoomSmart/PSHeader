@@ -1,7 +1,7 @@
 #ifndef _PS_CAMGESTALT
 #define _PS_CAMGESTALT
 
-// All capability keys with "?" as a commet prefix requires use with MGGetBoolAnswer(key)
+// All capability keys with "?" as a comment prefix requires use with MGGetBoolAnswer(key)
 // Otherwise, use MGGetSInt32Answer(key, defaultValue)
 
 // ? has front-facing or rear-facing camera
@@ -40,7 +40,9 @@
 #define kFrontBurstSupportedKey "FrontFacingCameraBurstCapability"
 
 // interval value for each burst photo captured on front/rear camera
+// deobfuscated: RearFacingCameraStillDurationForBurst
 #define kBackCaptureIntervalKey "gq0j1GmcIcaD4DjJoo9pfg"
+// deobfuscated: FrontFacingCameraStillDurationForBurst
 #define kFrontCaptureIntervalKey "TDM8SEI14n2KE9PGHO0a4A"
 
 // ? supports iris mode on rear camera
@@ -103,7 +105,9 @@
 
 // ? has front pearl camera (might require use with MGIsQuestionValid())
 // is used for portrait mode
-#define kFrontPearlSupportedKey "8S7ydMJ4DlCUF38/hI/fJA" // iOS 11+
+// deobfuscated: PearlCameraCapability
+// counterpart: 8S7ydMJ4DlCUF38/hI/fJA
+#define kFrontPearlSupportedKey "BfEIy3W3t0Wxf7Hf7LEsAw" // iOS 11+
 
 // ? supports portrait effects
 // deobfuscated: DeviceSupportsPortraitLightEffectFilters
@@ -135,8 +139,8 @@
 #define kStudioLightPortraitPreviewKey "DeviceSupportsStudioLightPortraitPreview" // iOS 12+
 
 // ? supports single camera portrait mode
-#define kSSingleCameraPortraitKey "FymLPtOEy6FdE7TmKeoTdg" // iOS 12+
 // deobfuscated: DeviceSupportsSingleCameraPortrait
+#define kSSingleCameraPortraitKey "FymLPtOEy6FdE7TmKeoTdg" // iOS 12+
 
 // ? supports capturing on finger touch down
 #define kCameraCaptureOnTouchDownSupportedKey "DeviceSupportsCameraCaptureOnTouchDown" // iOS 12+
