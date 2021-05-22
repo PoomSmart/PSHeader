@@ -20,10 +20,10 @@ typedef NS_ENUM (NSUInteger, TargetType) {
     TargetTypeKeyboardExtensions = 1 << 2
 };
 
-extern "C" char ***_NSGetArgv();
+FOUNDATION_EXPORT char ***_NSGetArgv();
 
 static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *filters) {
-    char* executablePathC = **_NSGetArgv();
+    char *executablePathC = **_NSGetArgv();
 	NSString *executablePath = [NSString stringWithUTF8String:executablePathC];
     if (executablePath) {
 #ifdef __DEBUG__
