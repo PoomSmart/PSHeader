@@ -24,7 +24,7 @@ FOUNDATION_EXPORT char ***_NSGetArgv();
 
 static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *filters) {
     char *executablePathC = **_NSGetArgv();
-	NSString *executablePath = [NSString stringWithUTF8String:executablePathC];
+    NSString *executablePath = [NSString stringWithUTF8String:executablePathC];
     if (executablePath) {
 #ifdef __DEBUG__
         HBLogDebug(@"Executable path: %@", executablePath);
