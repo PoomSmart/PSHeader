@@ -45,14 +45,14 @@ static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *filters) {
                 return YES;
         }
 #endif
-        BOOL isSpringBoard = [processName isEqualToString:@"SpringBoard"];
+        BOOL isSpringBoard = NSStringEqual(processName, @"SpringBoard");
         BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
         BOOL isUILike = isSpringBoard || isExtensionOrApp;
         if (type & TargetTypeApps && isUILike && !isExtension)
             return YES;
         if (type & TargetTypeKeyboardExtensions && isExtension) {
             id val = NSBundle.mainBundle.infoDictionary[@"NSExtension"][@"NSExtensionPointIdentifier"];
-            BOOL isKeyboardExtension = val ? [val isEqualToString:@"com.apple.keyboard-service"] : NO;
+            BOOL isKeyboardExtension = val ? NSStringEqual(val, @"com.apple.keyboard-service") : NO;
             return isKeyboardExtension;
         }
     }
