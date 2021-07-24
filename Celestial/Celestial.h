@@ -1,5 +1,0 @@
-#import "FigCaptureConnectionConfiguration.h"
-#import "FigCaptureIrisStillImageSettings.h"
-#import "FigCaptureSourceFormat.h"
-#import "FigCaptureStillImageSettings.h"
-#import "FigVideoCaptureConnectionConfiguration.h"
