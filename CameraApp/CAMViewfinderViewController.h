@@ -64,6 +64,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (void)_captureStillImageWithCurrentSettings;
 - (void)_collapseExpandedButtonsAnimated:(BOOL)animated;
 - (void)_flashButtonDidChangeFlashMode:(CAMFlashButton *)flashButton;
+- (void)_handleUserChangedToFlashMode:(NSInteger)flashMode;
 - (void)_handleShutterButtonPressed:(id)arg1;
 - (void)_handleShutterButtonReleased:(id)arg1;
 - (void)_handleUserChangedFromDevice:(NSInteger)from toDevice:(NSInteger)to;
