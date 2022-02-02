@@ -22,7 +22,7 @@ typedef NS_ENUM (NSUInteger, TargetType) {
 
 FOUNDATION_EXPORT char ***_NSGetArgv();
 
-static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *filters) {
+static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *whitelist, NSArray <NSString *> *blacklist) {
     char *executablePathC = **_NSGetArgv();
     NSString *executablePath = [NSString stringWithUTF8String:executablePathC];
     if (executablePath) {
@@ -33,14 +33,22 @@ static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *filters) {
         if (type & TargetTypeGenericExtensions && isExtension)
             return YES;
         NSString *processName = [executablePath lastPathComponent];
-#ifdef CHECK_EXCEPTIONS
-        if (filters) {
-            if (filters.count == 0)
-                return YES;
-            BOOL allow = [filters containsObject:processName];
+#ifdef CHECK_BLACKLIST
+        if (blacklist.count) {
+            BOOL disallow = [blacklist containsObject:processName];
+            NSString *bundleIdentifier = NSBundle.mainBundle.bundleIdentifier;
+            if (!disallow && bundleIdentifier)
+                disallow = [blacklist containsObject:bundleIdentifier];
+            if (disallow)
+                return NO;
+        }
+#endif
+#ifdef CHECK_WHITELIST
+        if (whitelist.count) {
+            BOOL allow = [whitelist containsObject:processName];
             NSString *bundleIdentifier = NSBundle.mainBundle.bundleIdentifier;
             if (!allow && bundleIdentifier)
-                allow = [filters containsObject:bundleIdentifier];
+                allow = [whitelist containsObject:bundleIdentifier];
             if (allow)
                 return YES;
         }

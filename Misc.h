@@ -14,7 +14,7 @@
 #else
 #define realPath(path) (path)
 #define realPath2(path) ([path UTF8String])
-#define realPrefPath(domain) [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", domain]
+#define realPrefPath(domain) [NSString stringWithFormat:@"/var/mobile/Library/Preferences/%@.plist", domain]
 #endif
 
 #define fileExist(path) [[NSFileManager defaultManager] fileExistsAtPath:path]
