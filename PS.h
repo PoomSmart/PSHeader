@@ -67,7 +67,7 @@ static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *whitelist, NSArray 
     return NO;
 }
 
-#define isTarget(type) _isTarget(type, nil)
+#define isTarget(type) _isTarget(type, nil, nil)
 
 #ifdef CHECK_TARGET_GUI
 
