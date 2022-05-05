@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 NS_CLASS_AVAILABLE_IOS(7_0)
 @interface CAMElapsedTimeView : UIView
 @property(readonly) UILabel *_timeLabel;

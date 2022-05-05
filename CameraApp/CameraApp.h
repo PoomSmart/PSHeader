@@ -1,4 +1,3 @@
-#import "../Availability.h"
 #import "AVCaptureDeviceFormat+CameraUI.h"
 #import "AVCaptureSession+CAMCaptureEngine.h"
 #import "CAMApplicationSpec.h"

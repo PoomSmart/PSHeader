@@ -3,7 +3,6 @@
 
 #import "iOSVersions.h"
 #import "Misc.h"
-#import "Availability.h"
 
 #define PS_DONATE_URL @"https://poomsmart.github.io/repo/"
 #define PS_TWITTER_URL @"https://twitter.com/PoomSmart"

@@ -1,4 +1,6 @@
-NS_CLASS_AVAILABLE_IOS(7_0)
+#import <UIKit/UIKit.h>
+
+API_AVAILABLE(ios(7.0))
 @interface CAMButtonLabel : UILabel
 
 @property BOOL useLegibilityView;

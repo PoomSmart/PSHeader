@@ -1,6 +1,6 @@
-NS_CLASS_AVAILABLE_IOS(7_0)
 #import "CAMButtonLabel.h"
 
+API_AVAILABLE(ios(7.0))
 @interface CAMHDRButton : UIButton <NSCoding>
 @property(readonly, nonatomic) CAMButtonLabel *_onLabel;
 @property(readonly, nonatomic) CAMButtonLabel *_offLabel;
