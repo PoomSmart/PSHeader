@@ -6,7 +6,7 @@ NS_CLASS_AVAILABLE_IOS(7_0)
 + (instancetype)specForPhone;
 + (instancetype)specForPad;
 
-@property(readonly) NSInteger modeDialOrientation;
-@property(readonly) NSInteger bottomBarOrientation;
+@property (readonly) NSInteger modeDialOrientation;
+@property (readonly) NSInteger bottomBarOrientation;
 
 @end

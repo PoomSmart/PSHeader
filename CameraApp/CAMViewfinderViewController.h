@@ -22,22 +22,22 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 @property NSInteger _currentMode;
 @property NSInteger _currentDevice;
 @property NSInteger _desiredCaptureDevice;
-@property(getter = _numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
+@property (getter=_numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
 
-@property(nonatomic, strong) CAMViewfinderView *view;
-@property(retain, nonatomic) CAMFramerateIndicatorView *_framerateIndicatorView;
-@property(readonly, assign, nonatomic) CAMModeDial *_modeDial;
-@property(readonly, assign, nonatomic) CAMTopBar *_topBar;
-@property(readonly, assign, nonatomic) CAMBottomBar *_bottomBar;
-@property(readonly, assign, nonatomic) CAMFlashButton *_flashButton;
-@property(readonly, assign, nonatomic) CAMFlipButton *_flipButton;
-@property(readonly, assign, nonatomic) CAMTimerButton *_timerButton;
-@property(readonly, assign, nonatomic) CAMFilterButton *_filterButton;
-@property(readonly, assign, nonatomic) CAMZoomSlider *_zoomSlider;
-@property(readonly, assign, nonatomic) CAMHDRButton *_HDRButton;
-@property(readonly, assign, nonatomic) CUShutterButton *_shutterButton;
-@property(readonly, assign, nonatomic) CUShutterButton *_stillDuringVideoButton;
-@property(readonly, assign, nonatomic) CAMElapsedTimeView *_elapsedTimeView;
+@property (nonatomic, strong) CAMViewfinderView *view;
+@property (retain, nonatomic) CAMFramerateIndicatorView *_framerateIndicatorView;
+@property (readonly, assign, nonatomic) CAMModeDial *_modeDial;
+@property (readonly, assign, nonatomic) CAMTopBar *_topBar;
+@property (readonly, assign, nonatomic) CAMBottomBar *_bottomBar;
+@property (readonly, assign, nonatomic) CAMFlashButton *_flashButton;
+@property (readonly, assign, nonatomic) CAMFlipButton *_flipButton;
+@property (readonly, assign, nonatomic) CAMTimerButton *_timerButton;
+@property (readonly, assign, nonatomic) CAMFilterButton *_filterButton;
+@property (readonly, assign, nonatomic) CAMZoomSlider *_zoomSlider;
+@property (readonly, assign, nonatomic) CAMHDRButton *_HDRButton;
+@property (readonly, assign, nonatomic) CUShutterButton *_shutterButton;
+@property (readonly, assign, nonatomic) CUShutterButton *_stillDuringVideoButton;
+@property (readonly, assign, nonatomic) CAMElapsedTimeView *_elapsedTimeView;
 
 - (BOOL)_isCapturingFromTimer;
 - (BOOL)_isCapturingTimelapse;

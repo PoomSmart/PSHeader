@@ -2,7 +2,7 @@
 
 @interface CAMAvalancheSession : NSObject
 
-@property(readonly, assign, nonatomic) NSUInteger numberOfPhotos;
+@property (readonly, assign, nonatomic) NSUInteger numberOfPhotos;
 
 @end
 

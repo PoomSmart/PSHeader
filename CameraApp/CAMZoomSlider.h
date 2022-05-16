@@ -1,14 +1,14 @@
 NS_CLASS_AVAILABLE_IOS(8_0)
 @interface CAMZoomSlider : UISlider
 
-@property(getter = isMinimumAutozooming) BOOL minimumAutozooming;
-@property(getter = isMaximumAutozooming) BOOL maximumAutozooming;
-@property(getter = _isAutozooming, setter = _setAutozooming :) BOOL _autozooming;
-@property(readonly) NSTimer *_visibilityTimer;
-@property(readonly) UIImageView *_thumbImageView;
-@property(readonly) UIView *_minTrackMaskView;
-@property(readonly) UIView *_maxTrackMaskView;
-@property(assign, nonatomic) UIView *delegate;
+@property (getter=isMinimumAutozooming) BOOL minimumAutozooming;
+@property (getter=isMaximumAutozooming) BOOL maximumAutozooming;
+@property (getter=_isAutozooming, setter = _setAutozooming :) BOOL _autozooming;
+@property (readonly) NSTimer *_visibilityTimer;
+@property (readonly) UIImageView *_thumbImageView;
+@property (readonly) UIView *_minTrackMaskView;
+@property (readonly) UIView *_maxTrackMaskView;
+@property (assign, nonatomic) UIView *delegate;
 
 - (BOOL)visibilityTimerIsValid;
 

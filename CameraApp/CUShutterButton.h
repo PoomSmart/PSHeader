@@ -8,8 +8,8 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 + (instancetype)tinyShutterButton;
 + (instancetype)tinyShutterButtonWithLayoutStyle:(NSInteger)style NS_AVAILABLE_IOS(10_0);
 
-@property(getter = isPulsing) BOOL pulsing;
-@property(getter = isSpinning) BOOL spinning;
+@property (getter=isPulsing) BOOL pulsing;
+@property (getter=isSpinning) BOOL spinning;
 @property NSInteger mode;
 
 - (UIColor *)_colorForMode:(NSInteger)mode;

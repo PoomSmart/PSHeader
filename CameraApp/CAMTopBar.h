@@ -8,17 +8,17 @@
 
 NS_CLASS_AVAILABLE_IOS(7_0)
 @interface CAMTopBar : UIView
-@property(readonly, assign, nonatomic) UIView *_backgroundView;
-@property(retain, nonatomic) CAMFilterButton *filterButton;
-@property(retain, nonatomic) CAMHDRButton *HDRButton;
-@property(retain, nonatomic) CAMFlashButton *flashButton;
-@property(retain, nonatomic) CAMTimerButton *timerButton NS_AVAILABLE_IOS(8_0);
-@property(retain, nonatomic) CAMFlipButton *flipButton;
-@property(retain, nonatomic) CAMElapsedTimeView *elapsedTimeView;
-@property(readonly, assign, nonatomic, getter = isFloating) BOOL floating;
-@property(assign, nonatomic) NSInteger orientation;
-@property(assign, nonatomic) NSInteger style;
-@property(assign, nonatomic) NSInteger backgroundStyle;
+@property (readonly, assign, nonatomic) UIView *_backgroundView;
+@property (retain, nonatomic) CAMFilterButton *filterButton;
+@property (retain, nonatomic) CAMHDRButton *HDRButton;
+@property (retain, nonatomic) CAMFlashButton *flashButton;
+@property (retain, nonatomic) CAMTimerButton *timerButton NS_AVAILABLE_IOS(8_0);
+@property (retain, nonatomic) CAMFlipButton *flipButton;
+@property (retain, nonatomic) CAMElapsedTimeView *elapsedTimeView;
+@property (readonly, assign, nonatomic, getter=isFloating) BOOL floating;
+@property (assign, nonatomic) NSInteger orientation;
+@property (assign, nonatomic) NSInteger style;
+@property (assign, nonatomic) NSInteger backgroundStyle;
 
 - (UIButton *)_expandedMenuButton NS_AVAILABLE_IOS(8_0);
 - (NSObject *)delegate;

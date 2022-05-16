@@ -15,32 +15,32 @@
 NS_CLASS_DEPRECATED_IOS(5_0, 7_1)
 @interface PLCameraView : UIView
 
-@property(retain, nonatomic) UIToolbar *bottomButtonBar;
+@property (retain, nonatomic) UIToolbar *bottomButtonBar;
 @property NSInteger photoFlashMode;
-@property(assign, nonatomic) NSInteger videoFlashMode;
-@property(assign, nonatomic) NSInteger flashMode;
-@property(assign, nonatomic) NSInteger lastSelectedPhotoFlashMode;
-@property(readonly, assign, nonatomic) CAMModeDial *_modeDial NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMTopBar *_topBar NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMBottomBar *_bottomBar NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMFlashButton *_flashButton NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMFlipButton *_flipButton NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMFilterButton *_filterButton;
-@property(readonly, assign, nonatomic) CAMHDRButton *_HDRButton NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMShutterButton *_shutterButton NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMShutterButton *_stillDuringVideoButton NS_AVAILABLE_IOS(7_0);
-@property(readonly, assign, nonatomic) CAMElapsedTimeView *_elapsedTimeView NS_AVAILABLE_IOS(7_0);
-@property(assign, nonatomic, getter = isTallScreen) BOOL tallScreen;
-@property(readonly, assign, nonatomic) BOOL isCameraReady;
-@property(assign, nonatomic) NSInteger cameraDevice;
-@property(assign, nonatomic) NSInteger cameraMode;
+@property (assign, nonatomic) NSInteger videoFlashMode;
+@property (assign, nonatomic) NSInteger flashMode;
+@property (assign, nonatomic) NSInteger lastSelectedPhotoFlashMode;
+@property (readonly, assign, nonatomic) CAMModeDial *_modeDial NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMTopBar *_topBar NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMBottomBar *_bottomBar NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMFlashButton *_flashButton NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMFlipButton *_flipButton NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMFilterButton *_filterButton;
+@property (readonly, assign, nonatomic) CAMHDRButton *_HDRButton NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMShutterButton *_shutterButton NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMShutterButton *_stillDuringVideoButton NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMElapsedTimeView *_elapsedTimeView NS_AVAILABLE_IOS(7_0);
+@property (assign, nonatomic, getter=isTallScreen) BOOL tallScreen;
+@property (readonly, assign, nonatomic) BOOL isCameraReady;
+@property (assign, nonatomic) NSInteger cameraDevice;
+@property (assign, nonatomic) NSInteger cameraMode;
 #if FOR_IOS_BETWEEN(7_0, 8_4)
-@property(readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession NS_AVAILABLE_IOS(7_0);
+@property (readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession NS_AVAILABLE_IOS(7_0);
 #endif
-@property(assign, nonatomic) BOOL HDRIsOn;
-@property(readonly, assign, nonatomic) CGRect unzoomedPreviewFrame;
-@property(getter = _isFlipping, setter = _setFlipping:) BOOL _flipping;
-@property(getter = _numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
+@property (assign, nonatomic) BOOL HDRIsOn;
+@property (readonly, assign, nonatomic) CGRect unzoomedPreviewFrame;
+@property (getter=_isFlipping, setter = _setFlipping:) BOOL _flipping;
+@property (getter=_numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
 
 - (BOOL)_didEverMoveToWindow;
 - (BOOL)_isCapturing;

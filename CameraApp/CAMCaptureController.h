@@ -6,18 +6,18 @@
 NS_CLASS_AVAILABLE_IOS(8_0)
 @interface CAMCaptureController : NSObject
 
-@property(assign, nonatomic) AVCaptureDevice *currentDevice;
-@property(assign, nonatomic) AVCaptureOutput *currentOutput;
-@property(retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
-@property(readonly, assign, nonatomic) AVCaptureSession *currentSession;
-@property(assign, nonatomic) NSInteger cameraDevice;
-@property(assign, nonatomic) NSInteger cameraMode;
-@property(assign, nonatomic) NSInteger flashMode;
-@property(readonly, assign, nonatomic) NSInteger cameraOrientation;
-@property(assign, nonatomic, getter = isHDREnabled) BOOL HDREnabled;
-@property(getter = _isPreviewPaused, setter = _setPreviewPaused:) BOOL _previewPaused;
-@property(retain, nonatomic) CAMEffectsRenderer *effectsRenderer;
-@property(assign, nonatomic) CGFloat videoZoomFactor;
+@property (assign, nonatomic) AVCaptureDevice *currentDevice;
+@property (assign, nonatomic) AVCaptureOutput *currentOutput;
+@property (retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
+@property (readonly, assign, nonatomic) AVCaptureSession *currentSession;
+@property (assign, nonatomic) NSInteger cameraDevice;
+@property (assign, nonatomic) NSInteger cameraMode;
+@property (assign, nonatomic) NSInteger flashMode;
+@property (readonly, assign, nonatomic) NSInteger cameraOrientation;
+@property (assign, nonatomic, getter=isHDREnabled) BOOL HDREnabled;
+@property (getter=_isPreviewPaused, setter = _setPreviewPaused:) BOOL _previewPaused;
+@property (retain, nonatomic) CAMEffectsRenderer *effectsRenderer;
+@property (assign, nonatomic) CGFloat videoZoomFactor;
 @property BOOL performingAvalancheCapture;
 
 + (BOOL)isStillImageMode:(NSInteger)mode;

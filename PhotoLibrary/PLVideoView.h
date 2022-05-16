@@ -2,7 +2,7 @@
 
 @interface PLVideoView : UIView
 
-@property(readonly) PLManagedAsset *videoCameraImage;
+@property (readonly) PLManagedAsset *videoCameraImage;
 
 - (BOOL)isPlaying;
 - (BOOL)canEdit;

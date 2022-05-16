@@ -4,8 +4,8 @@
 NS_CLASS_AVAILABLE_IOS(9_0)
 @interface CAMCaptureEngine : NSObject
 
-@property(retain, nonatomic) AVCaptureDevice *cameraDevice;
-@property(retain, nonatomic) AVCaptureSession *_captureSession;
+@property (retain, nonatomic) AVCaptureDevice *cameraDevice;
+@property (retain, nonatomic) AVCaptureSession *_captureSession;
 
 - (CAMCaptureMovieFileOutput *)movieFileOutput;
 - (AVCaptureDeviceInput *)audioCaptureDeviceInput;

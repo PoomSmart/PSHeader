@@ -6,8 +6,8 @@ NS_CLASS_AVAILABLE_IOS(7_0)
 + (instancetype)smallShutterButton;
 + (instancetype)tinyShutterButton NS_AVAILABLE_IOS(8_0);
 
-@property(getter = isPulsing) BOOL pulsing;
-@property(getter = isSpinning) BOOL spinning;
+@property (getter=isPulsing) BOOL pulsing;
+@property (getter=isSpinning) BOOL spinning;
 
 @property NSInteger mode;
 

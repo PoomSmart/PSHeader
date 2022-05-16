@@ -3,7 +3,7 @@
 NS_CLASS_AVAILABLE_IOS(8_0)
 @interface CAMPreviewView : UIView
 
-@property(retain, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
+@property (retain, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 
 @property CGFloat dimmingStrength;
 

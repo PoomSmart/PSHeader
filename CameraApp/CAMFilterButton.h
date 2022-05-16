@@ -3,8 +3,8 @@
 NS_CLASS_AVAILABLE_IOS(7_0)
 @interface CAMFilterButton : UIButton <NSCoding>
 
-@property(readonly) UIImageView *_circlesImageView;
-@property(getter = isOn) BOOL on;
+@property (readonly) UIImageView *_circlesImageView;
+@property (getter=isOn) BOOL on;
 @property UIEdgeInsets tappableEdgeInsets;
 
 + (instancetype)filterButton;

@@ -3,7 +3,7 @@
 NS_CLASS_AVAILABLE_IOS(5_0)
 @interface PLEditPhotoController : UIViewController <UIActionSheetDelegate>
 
-@property(readonly) CGRect normalizedCropRect;
+@property (readonly) CGRect normalizedCropRect;
 
 - (UINavigationItem *)navigationItem;
 - (CIImage *)_newCIImageFromUIImage:(UIImage *)image;

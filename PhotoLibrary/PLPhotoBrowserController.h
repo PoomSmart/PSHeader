@@ -3,8 +3,8 @@
 
 NS_CLASS_AVAILABLE_IOS(5_0)
 @interface PLPhotoBrowserController : UIViewController <UIActionSheetDelegate>
-@property(assign, nonatomic) BOOL isCameraApp;
-@property(readonly, assign, nonatomic) PLVideoView *currentVideoView;
+@property (assign, nonatomic) BOOL isCameraApp;
+@property (readonly, assign, nonatomic) PLVideoView *currentVideoView;
 - (PLManagedAsset *)currentAsset;
 - (UINavigationBar *)navigationBar;
 - (BOOL)isEditingVideo;
