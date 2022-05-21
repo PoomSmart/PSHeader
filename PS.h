@@ -13,7 +13,7 @@
 
 #ifdef CHECK_TARGET
 
-typedef NS_ENUM (NSUInteger, TargetType) {
+typedef NS_ENUM(NSUInteger, TargetType) {
     TargetTypeApps = 1 << 0,
     TargetTypeGenericExtensions = 1 << 1,
     TargetTypeKeyboardExtensions = 1 << 2

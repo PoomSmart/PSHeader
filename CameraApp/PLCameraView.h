@@ -34,9 +34,7 @@ NS_CLASS_DEPRECATED_IOS(5_0, 7_1)
 @property (readonly, assign, nonatomic) BOOL isCameraReady;
 @property (assign, nonatomic) NSInteger cameraDevice;
 @property (assign, nonatomic) NSInteger cameraMode;
-#if FOR_IOS_BETWEEN(7_0, 8_4)
-@property (readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession NS_AVAILABLE_IOS(7_0);
-#endif
+@property (readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession NS_DEPRECATED_IOS(7_0, 8_4);
 @property (assign, nonatomic) BOOL HDRIsOn;
 @property (readonly, assign, nonatomic) CGRect unzoomedPreviewFrame;
 @property (getter=_isFlipping, setter = _setFlipping:) BOOL _flipping;

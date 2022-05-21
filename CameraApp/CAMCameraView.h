@@ -44,9 +44,7 @@ NS_CLASS_AVAILABLE_IOS(8_0)
 @property (readonly, assign, nonatomic) CAMShutterButton *_shutterButton;
 @property (readonly, assign, nonatomic) CAMShutterButton *_stillDuringVideoButton;
 @property (readonly, assign, nonatomic) CAMElapsedTimeView *_elapsedTimeView;
-#if FOR_IOS_BETWEEN(7_0, 8_4)
-@property (readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession;
-#endif
+@property (readonly, assign, nonatomic) CAMAvalancheSession *_avalancheSession NS_DEPRECATED_IOS(7_0, 8_4);
 @property (readonly, assign, nonatomic) CAMTorchPatternController *_torchPatternController;
 
 - (BOOL)_avalancheCaptureInProgress;

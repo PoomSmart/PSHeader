@@ -39,9 +39,7 @@ NS_CLASS_AVAILABLE_IOS(8_0)
 - (BOOL)isFocusLockSupported;
 - (BOOL)isReady;
 
-#if FOR_IOS_BETWEEN(7_0, 8_4)
-- (CAMAvalancheCaptureService *)_avalancheCaptureService;
-#endif
+- (CAMAvalancheCaptureService *)_avalancheCaptureService NS_DEPRECATED_IOS(7_0, 8_4);
 - (CAMCameraView *)delegate;
 - (NSMutableArray<NSNumber *> *)supportedCameraModes;
 
