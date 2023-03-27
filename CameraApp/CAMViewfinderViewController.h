@@ -9,6 +9,7 @@
 #import "CAMPreviewViewController.h"
 #import "CUCaptureController.h"
 #import "CAMCaptureGraphConfiguration.h"
+#import "CAMVideoConfigurationStatusIndicator.h"
 
 NS_CLASS_AVAILABLE_IOS(9_0)
 @interface CAMViewfinderViewController : UIViewController
@@ -22,6 +23,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 @property NSInteger _currentMode;
 @property NSInteger _currentDevice;
 @property NSInteger _desiredCaptureDevice;
+@property (nonatomic, assign, readwrite, setter=_setResolvedLowLightMode:) NSInteger _resolvedLowLightMode;
 @property (getter=_numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
 
 @property (nonatomic, strong) CAMViewfinderView *view;
@@ -52,6 +54,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (CAMCaptureGraphConfiguration *)_currentGraphConfiguration;
 - (CAMPreviewViewController *)_previewViewController;
 - (CUCaptureController *)_captureController;
+- (CAMVideoConfigurationStatusIndicator *)_targetVideoConfigurationStatusIndicator NS_AVAILABLE_IOS(14_0);
 
 - (NSInteger)_effectFilterTypeForMode:(NSInteger)mode;
 - (NSInteger)_remainingCaptureTimerTicks;
@@ -59,7 +62,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (NSInteger)_timerDuration;
 - (NSInteger)timerDuration;
 
-- (NSMutableArray<NSNumber *> *)modesForModeDial:(id)arg;
+- (NSMutableArray <NSNumber *> *)modesForModeDial:(id)arg;
 
 - (void)_captureStillImageWithCurrentSettings;
 - (void)_collapseExpandedButtonsAnimated:(BOOL)animated;
