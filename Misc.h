@@ -13,8 +13,8 @@
 #define realPath2(path) [realPath(path) UTF8String]
 #define realPrefPath(domain) [NSString stringWithFormat:@"%@/Library/Preferences/%@.plist", @(getenv("SIMULATOR_SHARED_RESOURCES_DIRECTORY")), domain]
 #else
-#define realPath(path) ROOT_PATH_NS(path)
-#define realPath2(path) ([ROOT_PATH_NS(path) UTF8String])
+#define realPath(path) (path)
+#define realPath2(path) ([path UTF8String])
 #define realPrefPath(domain) [NSString stringWithFormat:@"/var/mobile/Library/Preferences/%@.plist", domain]
 #endif
 
