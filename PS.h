@@ -13,6 +13,8 @@
 
 #ifdef CHECK_TARGET
 
+#import <HBLog.h>
+
 typedef NS_ENUM(NSUInteger, TargetType) {
     TargetTypeApps = 1 << 0,
     TargetTypeGenericExtensions = 1 << 1,
@@ -29,8 +31,10 @@ static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *whitelist, NSArray 
         HBLogDebug(@"Executable path: %@", executablePath);
 #endif
         BOOL isExtension = [executablePath rangeOfString:@"appex"].location != NSNotFound;
-        if (type & TargetTypeGenericExtensions && isExtension)
+        if (type & TargetTypeGenericExtensions && isExtension) {
+            HBLogDebug(@"Injected: extension");
             return YES;
+        }
         NSString *processName = [executablePath lastPathComponent];
 #ifdef CHECK_BLACKLIST
         if (blacklist.count) {
@@ -48,18 +52,24 @@ static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *whitelist, NSArray 
             NSString *bundleIdentifier = NSBundle.mainBundle.bundleIdentifier;
             if (!allow && bundleIdentifier)
                 allow = [whitelist containsObject:bundleIdentifier];
-            if (allow)
+            if (allow) {
+                HBLogDebug(@"Injected: whitelist");
                 return YES;
+            }
         }
 #endif
         BOOL isSpringBoard = NSStringEqual(processName, @"SpringBoard");
         BOOL isExtensionOrApp = [executablePath rangeOfString:@"/Application"].location != NSNotFound;
         BOOL isUILike = isSpringBoard || isExtensionOrApp;
-        if (type & TargetTypeApps && isUILike && !isExtension)
+        if (type & TargetTypeApps && isUILike && !isExtension) {
+            HBLogDebug(@"Injected: app");
             return YES;
+        }
         if (type & TargetTypeKeyboardExtensions && isExtension) {
             id val = NSBundle.mainBundle.infoDictionary[@"NSExtension"][@"NSExtensionPointIdentifier"];
             BOOL isKeyboardExtension = val ? NSStringEqual(val, @"com.apple.keyboard-service") : NO;
+            if (isKeyboardExtension)
+                HBLogDebug(@"Injected: keyboard extension");
             return isKeyboardExtension;
         }
     }
