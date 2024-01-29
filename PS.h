@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, TargetType) {
 extern int _NSGetExecutablePath(char* buf, uint32_t* bufsize);
 
 static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *whitelist, NSArray <NSString *> *blacklist) {
-    char *executablePathC = malloc(1024);
+    char *executablePathC = (char *)malloc(1024);
 	uint32_t size = 1024;
 	if (_NSGetExecutablePath(executablePathC, &size) != 0) {
 		free(executablePathC);
@@ -28,9 +28,7 @@ static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *whitelist, NSArray 
 	}
     NSString *executablePath = [NSString stringWithUTF8String:executablePathC];
     if (executablePath) {
-#ifdef __DEBUG__
         HBLogDebug(@"Executable path: %@", executablePath);
-#endif
         BOOL isExtension = [executablePath rangeOfString:@"appex"].location != NSNotFound;
         if (type & TargetTypeGenericExtensions && isExtension) {
             HBLogDebug(@"Injected: extension");
