@@ -18,8 +18,8 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 @property NSInteger flashMode;
 @property NSInteger _flashMode;
 @property NSInteger _desiredTorchMode;
-@property NSInteger torchMode NS_AVAILABLE_IOS(10_0);;
-@property NSInteger _torchMode NS_DEPRECATED_IOS(9_0, 9_3);;
+@property NSInteger torchMode NS_AVAILABLE_IOS(10_0);
+@property NSInteger _torchMode NS_DEPRECATED_IOS(9_0, 9_3);
 @property NSInteger _currentMode;
 @property NSInteger _currentDevice;
 @property NSInteger _desiredCaptureDevice;
@@ -45,7 +45,9 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (BOOL)_isCapturingFromTimer;
 - (BOOL)_isCapturingTimelapse;
 - (BOOL)_shouldEnableFlashButton;
+- (BOOL)_shouldCreateAndEmbedControls NS_AVAILABLE_IOS(10_0);
 - (BOOL)_shouldHideFlashButtonForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(10_0);
+- (BOOL)_shouldHideStillDuringVideoButtonForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(10_0);
 - (BOOL)_shouldHideFlashButtonForMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)_shouldHideModeDialForMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)_shouldHideTopBarForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(10_0);

@@ -18,6 +18,7 @@
 #import "CAMCaptureMovieFileOutput.h"
 #import "CAMCaptureStillImageOutput.h"
 #import "CAMClosedViewfinderController.h"
+#import "CAMDynamicShutterControl.h"
 #import "CAMEffectFilterManager.h"
 #import "CAMEffectSelectionViewController.h"
 #import "CAMEffectsFullsizeView.h"
