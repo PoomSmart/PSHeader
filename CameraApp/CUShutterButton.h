@@ -10,7 +10,8 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 
 @property (getter=isPulsing) BOOL pulsing;
 @property (getter=isSpinning) BOOL spinning;
-@property NSInteger mode;
+@property NSInteger mode;  
+@property (assign, nonatomic) UIEdgeInsets tappableEdgeInsets;
 
 - (UIColor *)_colorForMode:(NSInteger)mode;
 - (UIColor *)_innerCircleColorForMode:(NSInteger)mode spinning:(BOOL)spinning;

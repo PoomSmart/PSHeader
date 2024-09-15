@@ -23,6 +23,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 @property NSInteger _currentMode;
 @property NSInteger _currentDevice;
 @property NSInteger _desiredCaptureDevice;
+@property (assign, setter=_setLayoutStyle:, nonatomic) NSInteger _layoutStyle;
 @property (nonatomic, assign, readwrite, setter=_setResolvedLowLightMode:) NSInteger _resolvedLowLightMode;
 @property (getter=_numFilterSelectionsBeforeCapture, setter = _setNumFilterSelectionsBeforeCapture:) NSUInteger _numFilterSelectionsBeforeCapture;
 
@@ -55,6 +56,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (CAMPreviewViewController *)_previewViewController;
 - (CUCaptureController *)_captureController;
 - (CAMVideoConfigurationStatusIndicator *)_targetVideoConfigurationStatusIndicator NS_AVAILABLE_IOS(14_0);
+- (CAMViewfinderView *)viewfinderView;
 
 - (NSInteger)_effectFilterTypeForMode:(NSInteger)mode;
 - (NSInteger)_remainingCaptureTimerTicks;
