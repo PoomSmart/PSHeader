@@ -53,6 +53,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (BOOL)_shouldHideTopBarForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(10_0);
 - (BOOL)_shouldHideTopBarForMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)isEmulatingImagePicker;
+- (BOOL)_isSpatialVideoInVideoModeActiveForMode:(NSInteger)mode devicePosition:(NSInteger)devicePosition; // iOS 16+ ?
 
 - (CAMCaptureGraphConfiguration *)_currentGraphConfiguration;
 - (CAMPreviewViewController *)_previewViewController;
