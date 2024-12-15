@@ -17,15 +17,23 @@ typedef NS_ENUM(NSUInteger, TargetType) {
     TargetTypeKeyboardExtensions = 1 << 2
 };
 
+#ifdef CHECK_TARGET_LEGACY
+FOUNDATION_EXPORT char ***_NSGetArgv();
+#else
 extern int _NSGetExecutablePath(char* buf, uint32_t* bufsize);
+#endif
 
 static BOOL _isTarget(NSUInteger type, NSArray <NSString *> *whitelist, NSArray <NSString *> *blacklist) {
+#ifdef CHECK_TARGET_LEGACY
+    char *executablePathC = **_NSGetArgv();
+#else
     char *executablePathC = (char *)malloc(1024);
 	uint32_t size = 1024;
 	if (_NSGetExecutablePath(executablePathC, &size) != 0) {
 		free(executablePathC);
 		return NO;
 	}
+#endif
     NSString *executablePath = [NSString stringWithUTF8String:executablePathC];
     if (executablePath) {
         HBLogDebug(@"Executable path: %@", executablePath);
