@@ -12,10 +12,13 @@
 #define realPath(path) [UISystemRootDirectory() stringByAppendingPathComponent:path]
 #define realPath2(path) [realPath(path) UTF8String]
 #define realPrefPath(domain) [NSString stringWithFormat:@"%@/Library/Preferences/%@.plist", @(getenv("SIMULATOR_SHARED_RESOURCES_DIRECTORY")), domain]
+
 #else
+
 #define realPath(path) (path)
 #define realPath2(path) ([path UTF8String])
 #define realPrefPath(domain) [NSString stringWithFormat:@"/var/mobile/Library/Preferences/%@.plist", domain]
+
 #endif
 
 #define fileExist(path) [[NSFileManager defaultManager] fileExistsAtPath:path]
@@ -24,5 +27,19 @@
 
 #define _PSFindSymbolCallable(image, name) make_sym_callable(MSFindSymbol(image, name))
 #define _PSFindSymbolReadable(image, name) make_sym_readable(MSFindSymbol(image, name))
+
+#ifdef THEOS_PACKAGE_SCHEME_ROOTHIDE
+
+#include <roothide.h>
+
+#define PS_ROOT_PATH(path) jbroot(path)
+#define PS_ROOT_PATH_NS(path) jbroot(path)
+
+#else
+
+#define PS_ROOT_PATH(path) ROOT_PATH(path)
+#define PS_ROOT_PATH_NS(path) ROOT_PATH_NS(path)
+
+#endif
 
 #endif

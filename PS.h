@@ -5,7 +5,7 @@
 #import "Misc.h"
 
 #define PS_DONATE_URL @"https://poomsmart.github.io/repo/"
-#define PS_TWITTER_URL @"https://twitter.com/PoomSmart"
+#define PS_TWITTER_URL @"https://x.com/PoomSmart"
 
 #ifdef CHECK_TARGET
 
