@@ -1,8 +1,11 @@
 #ifndef _PS_MISC
 #define _PS_MISC
 
-#import <Foundation/Foundation.h>
+#import <CoreFoundation/CFString.h>
+#import <Foundation/NSFileManager.h>
+#import <Foundation/NSString.h>
 #import <rootless.h>
+#import <substrate.h>
 #import "PAC.h"
 
 #if TARGET_OS_SIMULATOR
