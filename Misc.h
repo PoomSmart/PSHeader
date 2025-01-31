@@ -40,8 +40,17 @@
 
 #else
 
+#if TARGET_OS_SIMULATOR
+
+#define PS_ROOT_PATH(path) realPath2([NSString stringWithUTF8String:path])
+#define PS_ROOT_PATH_NS(path) realPath(path)
+
+#else
+
 #define PS_ROOT_PATH(path) ROOT_PATH(path)
 #define PS_ROOT_PATH_NS(path) ROOT_PATH_NS(path)
+
+#endif
 
 #endif
 
