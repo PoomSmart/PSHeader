@@ -3,11 +3,14 @@
 NS_CLASS_AVAILABLE_IOS(9_0)
 @interface CAMFramerateIndicatorView : UIView
 
-@property NSInteger style;
+@property (nonatomic, readonly) UIImageView *_borderImageView;
+@property (nonatomic, readonly) UILabel *_label;
+@property (assign, nonatomic) NSInteger layoutStyle;
+@property (assign, nonatomic) NSInteger style;  
+
 - (NSInteger)_framesPerSecond;
 
 - (NSString *)_labelText;
-- (UIImageView *)_borderImageView;
 
 - (UILabel *)_bottomLabel;
 - (UILabel *)_topLabel;
