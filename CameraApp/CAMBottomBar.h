@@ -34,6 +34,7 @@ NS_CLASS_AVAILABLE_IOS(7_0)
 - (UIView *)_shutterButtomBottomLayoutSpacer;
 - (UIView *)_filterButtonBottomLayoutSpacer;
 
+- (void)_layoutStillDuringVideoButtonForTraitCollection:(UITraitCollection *)traitCollection;
 - (void)_setupHorizontalFilterButtonConstraints;
 - (void)_setupVerticalFilterButtonConstraints;
 

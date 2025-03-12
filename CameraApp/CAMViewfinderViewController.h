@@ -45,20 +45,21 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (BOOL)_isCapturingFromTimer;
 - (BOOL)_isCapturingTimelapse;
 - (BOOL)_shouldEnableFlashButton;
-- (BOOL)_shouldCreateAndEmbedControls NS_AVAILABLE_IOS(10_0);
-- (BOOL)_shouldHideFlashButtonForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(10_0);
-- (BOOL)_shouldHideStillDuringVideoButtonForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(10_0);
+- (BOOL)_shouldCreateAndEmbedControls API_AVAILABLE(ios(10.0));
+- (BOOL)_shouldHideFlashButtonForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration API_AVAILABLE(ios(10.0));
+- (BOOL)_shouldHideStillDuringVideoButtonForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration API_AVAILABLE(ios(10.0));
+- (BOOL)_shouldHideStillDuringVideoButtonForMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)_shouldHideFlashButtonForMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)_shouldHideModeDialForMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
-- (BOOL)_shouldHideTopBarForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(10_0);
+- (BOOL)_shouldHideTopBarForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration API_AVAILABLE(ios(10.0));
 - (BOOL)_shouldHideTopBarForMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
 - (BOOL)isEmulatingImagePicker;
 - (BOOL)_isSpatialVideoInVideoModeActiveForMode:(NSInteger)mode devicePosition:(NSInteger)devicePosition; // iOS 16+ ?
 
-- (CAMCaptureGraphConfiguration *)_currentGraphConfiguration;
+- (CAMCaptureGraphConfiguration *)_currentGraphConfiguration API_AVAILABLE(ios(10.0));
 - (CAMPreviewViewController *)_previewViewController;
 - (CUCaptureController *)_captureController;
-- (CAMVideoConfigurationStatusIndicator *)_targetVideoConfigurationStatusIndicator NS_AVAILABLE_IOS(14_0);
+- (CAMVideoConfigurationStatusIndicator *)_targetVideoConfigurationStatusIndicator API_AVAILABLE(ios(14.0));
 - (CAMViewfinderView *)viewfinderView;
 
 - (NSInteger)_effectFilterTypeForMode:(NSInteger)mode;
