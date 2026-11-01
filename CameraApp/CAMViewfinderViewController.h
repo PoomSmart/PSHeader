@@ -85,7 +85,8 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 - (void)captureController:(id)arg1 didChangeToMode:(NSInteger)mode device:(NSInteger)device NS_DEPRECATED_IOS(9_0, 9_3);
 - (void)readUserPreferencesAndHandleChangesWithOverrides:(id)arg1 NS_AVAILABLE_IOS(13_0);
 
-- (NSInteger)_videoConfigurationResolutionForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration;
-- (NSInteger)_videoConfigurationFramerateForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration;
+- (NSInteger)_framerateIndicatorStyleForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_DEPRECATED_IOS(10_0, 14_0);
+- (NSInteger)_videoConfigurationResolutionForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(13_0);
+- (NSInteger)_videoConfigurationFramerateForGraphConfiguration:(CAMCaptureGraphConfiguration *)configuration NS_AVAILABLE_IOS(13_0);
 
 @end

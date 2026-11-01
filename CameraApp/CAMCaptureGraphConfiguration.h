@@ -14,6 +14,7 @@ NS_CLASS_AVAILABLE_IOS(10_0)
 - (NSInteger)squareModeEffectFilterType;
 - (NSInteger)mode;
 - (NSInteger)device;
+- (NSInteger)videoConfiguration;
 - (NSInteger)devicePosition;
 - (NSInteger)videoEncodingBehavior;
 
