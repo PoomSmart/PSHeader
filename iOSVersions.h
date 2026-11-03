@@ -16,6 +16,14 @@
 #define kCFCoreFoundationVersionNumber_iOS_18_3 3301
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_26_0
+#define kCFCoreFoundationVersionNumber_iOS_26_0 4040.1
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_27_0
+#define kCFCoreFoundationVersionNumber_iOS_27_0 5027
+#endif
+
 #define IS_IOS_BETWEEN_EEX(start, end) (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_ ## start && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_ ## end)
 
 #endif
