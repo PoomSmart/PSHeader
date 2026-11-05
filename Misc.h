@@ -4,7 +4,6 @@
 #import <CoreFoundation/CFString.h>
 #import <Foundation/NSFileManager.h>
 #import <Foundation/NSString.h>
-#import <rootless.h>
 #import <substrate.h>
 #import "PAC.h"
 
@@ -39,6 +38,8 @@
 #define PS_ROOT_PATH_NS(path) jbroot(path)
 
 #else
+
+#import <rootless.h>
 
 #if TARGET_OS_SIMULATOR
 
